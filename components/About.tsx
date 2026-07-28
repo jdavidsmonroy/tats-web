@@ -11,7 +11,7 @@ export default function About() {
           <div className="space-y-6">
             <h2 className="text-4xl font-bold tracking-tight">Sobre mí</h2>
             <p className="text-xl text-neutral-400 font-light leading-relaxed">
-              Cantante, vocalista y poetisa. Con años de experiencia en los escenarios, me especializo en fusionar géneros y conectar con el público desde la honestidad y la emoción. Ya sea liderando una banda de soul-funk, en formato acústico íntimo o a través de la palabra escrita en mi primer poemario, mi objetivo es transmitir sensibilidad y energía viva.
+              Cantante, vocalista y poetisa. Con años de experiencia en los escenarios, me especializo en fusionar géneros y conectar con el público desde la honestidad y la emoción. Ya sea como vocalista en un cuarteto de soul-funk, en formato acústico íntimo o a través de la palabra escrita en mi primer poemario, mi objetivo es transmitir sensibilidad y energía viva.
             </p>
             <div className="flex gap-8 pt-4">
               <div className="flex flex-col border-l-2 border-white/20 pl-4">
