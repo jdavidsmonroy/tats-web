@@ -34,10 +34,7 @@ export default function Projects() {
             <div className="p-8 relative bg-gradient-to-t from-neutral-900 via-neutral-900 to-transparent -mt-20">
               <h3 className="text-2xl font-bold mb-2">Deep Roots Duo</h3>
               <p className="text-neutral-400 mb-6 font-light">Dúo musical formado en Madrid en 2024. Repertorio acústico de clásicos del Pop-Rock ideal para eventos y bodas.</p>
-              
-              <div className="mb-6 relative z-20">
-                <AudioPlayer src="/audio/deep-roots/zombie.mp3" title="Escuchar extracto" />
-              </div>
+
 
               <Link href="/projects/deep-roots" className="inline-flex items-center text-sm font-medium text-white/80 hover:text-white transition-colors relative z-20">
                 Ver más <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
