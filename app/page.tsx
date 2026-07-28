@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import VenuesMarquee from "@/components/VenuesMarquee";
 import Projects from "@/components/Projects";
 import Gallery from "@/components/Gallery";
 import GigsCalendar from "@/components/GigsCalendar";
@@ -10,6 +11,7 @@ export default function Home() {
     <main className="min-h-screen bg-black">
       <Hero />
       <About />
+      <VenuesMarquee />
       <Projects />
       <Gallery />
       <GigsCalendar />

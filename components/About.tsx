@@ -16,11 +16,11 @@ export default function About() {
             <div className="flex gap-8 pt-4">
               <div className="flex flex-col border-l-2 border-white/20 pl-4">
                 <span className="text-3xl font-bold">10+</span>
-                <span className="text-sm text-neutral-500">años de exp.</span>
+                <span className="text-sm text-neutral-500">años de trayectoria</span>
               </div>
               <div className="flex flex-col border-l-2 border-white/20 pl-4">
-                <span className="text-3xl font-bold">500+</span>
-                <span className="text-sm text-neutral-500">conciertos</span>
+                <span className="text-3xl font-bold">3</span>
+                <span className="text-sm text-neutral-500">proyectos activos</span>
               </div>
               <div className="flex flex-col border-l-2 border-white/20 pl-4">
                 <span className="text-3xl font-bold">1</span>
