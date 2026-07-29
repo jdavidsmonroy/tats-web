@@ -19,7 +19,10 @@ export default function GigsCalendar() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`https://opensheet.elk.sh/${SHEET_ID}/1`)
+    // Desactivar caché con parámetro de marca de tiempo y cache: "no-store"
+    fetch(`https://opensheet.elk.sh/${SHEET_ID}/1?t=${Date.now()}`, {
+      cache: "no-store",
+    })
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) {
@@ -29,12 +32,11 @@ export default function GigsCalendar() {
           const validGigs = data
             .map((item: any) => {
               if (!item.fecha) return null;
-              
+
               let parsedDate: Date;
               if (item.fecha.includes("/")) {
                 const parts = item.fecha.split("/");
                 if (parts.length === 3) {
-                  // DD/MM/YYYY
                   parsedDate = new Date(parseInt(parts[2]), parseInt(parts[1]) - 1, parseInt(parts[0]));
                 } else {
                   parsedDate = new Date(item.fecha);
@@ -62,7 +64,6 @@ export default function GigsCalendar() {
 
   if (loading) return null;
 
-  // Si no hay conciertos futuros o la hoja está vacía, no se muestra la sección
   if (gigs.length === 0) return null;
 
   return (
