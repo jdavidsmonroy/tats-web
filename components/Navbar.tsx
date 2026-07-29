@@ -31,7 +31,7 @@ export default function Navbar() {
       )}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link href="/" className="text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity">
+        <Link href="/" className="text-xl font-thin tracking-[0.25em] pl-[0.25em] uppercase font-[family-name:var(--font-montserrat)] hover:opacity-80 transition-opacity">
           TATS
         </Link>
 

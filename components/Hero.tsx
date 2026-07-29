@@ -6,10 +6,9 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section className="relative h-screen flex flex-col justify-center items-center overflow-hidden">
-      {/* Background Placeholder */}
+      {/* Background Image Container */}
       <div className="absolute inset-0 z-0 bg-neutral-900">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black z-10" />
-        {/* Aquí iría la imagen/video */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black z-10" />
         <div className="w-full h-full bg-[url('/images/artmoniza/photo1.jpg')] bg-cover bg-center opacity-40 mix-blend-overlay" />
       </div>
 
@@ -18,7 +17,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-7xl md:text-9xl font-black tracking-tighter mb-4 text-white"
+          className="text-6xl md:text-8xl lg:text-9xl font-thin tracking-[0.2em] pl-[0.2em] mb-6 text-white font-[family-name:var(--font-montserrat)] uppercase select-none drop-shadow-2xl"
         >
           TATS
         </motion.h1>
@@ -39,7 +38,7 @@ export default function Hero() {
         >
           <Link
             href="#contact"
-            className="inline-flex h-14 items-center justify-center rounded-full bg-white px-8 text-sm font-medium text-black transition-transform active:scale-95 hover:bg-neutral-200"
+            className="inline-flex h-14 items-center justify-center rounded-full bg-white px-8 text-sm font-medium text-black transition-transform active:scale-95 hover:bg-neutral-200 shadow-2xl"
           >
             Contactar / booking
           </Link>
