@@ -97,7 +97,7 @@ export default function VideoGallery({ featuredVideo, videos }: VideoGalleryProp
           {videos.map((video) => {
             const thumbnailSrc =
               video.type === "youtube"
-                ? `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`
+                ? `https://i.ytimg.com/vi/${video.youtubeId}/hqdefault.jpg`
                 : video.posterSrc || "/images/in-the-mix/photo1.jpg";
 
             return (
@@ -111,6 +111,7 @@ export default function VideoGallery({ featuredVideo, videos }: VideoGalleryProp
                     src={thumbnailSrc}
                     alt={video.title}
                     fill
+                    unoptimized={video.type === "youtube"}
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
