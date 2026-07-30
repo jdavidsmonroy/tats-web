@@ -95,13 +95,13 @@ export default function Navbar() {
                   </Link>
 
                   <Link
-                    href="/projects/arturo-sordo"
+                    href="/projects/colaboraciones"
                     className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/10 text-white/80 hover:text-white transition-colors"
                   >
                     <Disc className="w-4 h-4 text-neutral-400 flex-shrink-0" />
                     <div className="flex flex-col">
-                      <span className="font-semibold text-xs text-white">Arturo Sordo ft. Tats</span>
-                      <span className="text-[10px] text-neutral-400 font-light">Colaboraciones en estudio</span>
+                      <span className="font-semibold text-xs text-white">Colaboraciones</span>
+                      <span className="text-[10px] text-neutral-400 font-light">Grabaciones & duetos</span>
                     </div>
                   </Link>
                 </motion.div>

@@ -57,15 +57,15 @@ export default function Projects() {
             </div>
           </div>
 
-          {/* Card 4 - Arturo Sordo Collaborations */}
+          {/* Card 4 - Collaborations */}
           <div className="group relative block overflow-hidden rounded-3xl bg-neutral-900 border border-white/5 hover:border-white/20 transition-all duration-300">
             <div className="aspect-[16/10] bg-neutral-800 relative">
                <div className="absolute inset-0 bg-[url('/images/tats/photo4.jpg')] bg-cover bg-center opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700 ease-out" />
             </div>
             <div className="p-8 relative bg-gradient-to-t from-neutral-900 via-neutral-900 to-transparent -mt-20">
-              <h3 className="text-2xl font-bold mb-2">Arturo Sordo ft. Tats</h3>
-              <p className="text-neutral-400 mb-6 font-light">Trabajos de estudio y colaboraciones vocales. Producción musical e interpretación en varios temas.</p>
-              <Link href="/projects/arturo-sordo" className="inline-flex items-center text-sm font-medium text-white/80 hover:text-white transition-colors relative z-20">
+              <h3 className="text-2xl font-bold mb-2">Colaboraciones</h3>
+              <p className="text-neutral-400 mb-6 font-light">Proyectos paralelos y colaboraciones vocales en estudio junto a otros artistas.</p>
+              <Link href="/projects/colaboraciones" className="inline-flex items-center text-sm font-medium text-white/80 hover:text-white transition-colors relative z-20">
                 Ver más <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
