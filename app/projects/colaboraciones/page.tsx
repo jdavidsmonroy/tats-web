@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, Disc, ExternalLink, Music2, Guitar, Sparkles } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import AudioPlayer from "@/components/AudioPlayer";
 
 export default function ColaboracionesPage() {
@@ -23,83 +23,61 @@ export default function ColaboracionesPage() {
       <div className="container mx-auto max-w-4xl">
         <Link
           href="/#projects"
-          className="inline-flex items-center text-sm text-neutral-400 hover:text-white mb-8 transition-colors"
+          className="inline-flex items-center text-sm text-neutral-400 hover:text-white mb-10 transition-colors"
         >
           <ArrowLeft className="w-4 h-4 mr-2" /> Volver a proyectos
         </Link>
 
-        {/* Hero Section */}
+        {/* Header */}
         <div className="mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs text-white/90 font-medium mb-4 border border-white/10">
-            <Music2 className="w-3.5 h-3.5" />
-            <span>Grabaciones & duetos</span>
-          </div>
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
             Colaboraciones
           </h1>
-          <p className="text-xl text-neutral-300 font-light leading-relaxed max-w-2xl">
+          <p className="text-xl text-neutral-400 font-light leading-relaxed max-w-2xl">
             Proyectos paralelos, canciones grabadas en estudio e interpretaciones vocales junto a otros artistas.
           </p>
         </div>
 
-        {/* List of Collaborations with clear cards */}
-        <div className="space-y-12">
-          {/* Card 1: Tats & Olcay Yavuz */}
-          <section className="bg-neutral-900/80 border border-white/10 rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-white/10">
+        {/* Collaborations List - Minimalist Flat 1-Level Structure */}
+        <div className="space-y-16">
+          {/* Collaboration 1: Tats & Olcay Yavuz */}
+          <div className="border-t border-white/10 pt-10">
+            <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-6">
               <div>
-                <div className="inline-flex items-center gap-1.5 text-xs text-neutral-400 font-medium uppercase tracking-wider mb-2">
-                  <Guitar className="w-4 h-4 text-neutral-400" />
-                  <span>Dúo paralelo & estudio</span>
-                </div>
+                <span className="text-xs text-neutral-500 font-medium uppercase tracking-wider block mb-1">
+                  Dúo paralelo
+                </span>
                 <h2 className="text-3xl font-bold text-white tracking-tight">Tats & Olcay Yavuz</h2>
-                <p className="text-sm text-neutral-400 font-light mt-1">
-                  Proyecto a dúo junto a Olcay Yavuz, guitarrista de In The Mix.
-                </p>
               </div>
-
-              <span className="self-start md:self-center px-3.5 py-1 rounded-full bg-white/10 text-white text-xs font-medium border border-white/10 whitespace-nowrap">
-                Publicado
+              <span className="text-xs text-neutral-400 font-light">
+                Hasta la raíz (Cover de Natalia Lafourcade)
               </span>
             </div>
 
-            <div className="space-y-4">
-              <AudioPlayer
-                src="/audio/olcay-yavuz/colaboracion-olcay.m4a"
-                title="Hasta la raíz"
-                artist="Tats & Olcay Yavuz (Cover de Natalia Lafourcade)"
-                badge="Grabación publicada"
-              />
-            </div>
-          </section>
+            <AudioPlayer
+              src="/audio/olcay-yavuz/colaboracion-olcay.m4a"
+              title="Hasta la raíz"
+              artist="Tats & Olcay Yavuz (Cover de Natalia Lafourcade)"
+            />
+          </div>
 
-          {/* Card 2: Arturo Sordo ft. Tats */}
-          <section className="bg-neutral-900/80 border border-white/10 rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-white/10">
-              <div>
-                <div className="inline-flex items-center gap-1.5 text-xs text-neutral-400 font-medium uppercase tracking-wider mb-2">
-                  <Disc className="w-4 h-4 text-neutral-400" />
-                  <span>Colaboraciones vocales</span>
-                </div>
-                <h2 className="text-3xl font-bold text-white tracking-tight">Arturo Sordo ft. Tats</h2>
-                <p className="text-sm text-neutral-400 font-light mt-1">
-                  Grabaciones e interpretación vocal en producciones de Arturo Sordo.
-                </p>
-              </div>
-
-              <span className="self-start md:self-center px-3.5 py-1 rounded-full bg-white/10 text-white text-xs font-medium border border-white/10 whitespace-nowrap">
-                Álbumes en Spotify
+          {/* Collaboration 2: Arturo Sordo ft. Tats */}
+          <div className="border-t border-white/10 pt-10">
+            <div className="mb-6">
+              <span className="text-xs text-neutral-500 font-medium uppercase tracking-wider block mb-1">
+                Colaboración en estudio
               </span>
+              <h2 className="text-3xl font-bold text-white tracking-tight mb-2">Arturo Sordo ft. Tats</h2>
+              <p className="text-sm text-neutral-400 font-light">
+                Grabaciones e interpretación vocal en producciones de estudio.
+              </p>
             </div>
 
-            <div className="grid md:grid-cols-1 gap-6">
+            <div className="grid md:grid-cols-1 gap-4">
               {arturoAlbums.map((album, idx) => (
-                <div
-                  key={idx}
-                  className="bg-black/50 border border-white/10 rounded-2xl p-4 shadow-xl overflow-hidden"
-                >
+                <div key={idx} className="overflow-hidden">
                   <iframe
-                    style={{ borderRadius: "12px" }}
+                    style={{ borderRadius: "16px" }}
                     src={`https://open.spotify.com/embed/album/${album.id}?utm_source=generator&theme=0`}
                     width="100%"
                     height="152"
@@ -108,21 +86,10 @@ export default function ColaboracionesPage() {
                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                     loading="lazy"
                   />
-                  <div className="mt-3 flex justify-end">
-                    <a
-                      href={album.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-xs text-neutral-400 hover:text-white transition-colors gap-1.5"
-                    >
-                      <span>Abrir en Spotify</span>
-                      <ExternalLink className="w-3.5 h-3.5" />
-                    </a>
-                  </div>
                 </div>
               ))}
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </main>
