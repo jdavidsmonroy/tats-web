@@ -1,6 +1,6 @@
 "use client";
 
-import { Send } from "lucide-react";
+import { Send, Mail } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -8,7 +8,14 @@ export default function Contact() {
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold tracking-tight mb-4">Contacto & booking</h2>
-          <p className="text-neutral-400 font-light">¿Quieres contar conmigo para tu próximo evento? Hablemos.</p>
+          <p className="text-neutral-400 font-light mb-4">¿Quieres contar conmigo para tu próximo evento? Hablemos.</p>
+          <a
+            href="mailto:musiclookandmore@gmail.com"
+            className="inline-flex items-center gap-2 text-sm text-neutral-300 hover:text-white transition-colors bg-white/5 border border-white/10 px-4 py-2 rounded-full shadow-lg"
+          >
+            <Mail className="w-4 h-4 text-neutral-400" />
+            <span>musiclookandmore@gmail.com</span>
+          </a>
         </div>
 
         <div className="bg-neutral-900 rounded-3xl p-8 md:p-12 border border-white/5 shadow-2xl">
@@ -48,9 +55,6 @@ export default function Contact() {
             >
               Enviar mensaje <Send className="w-4 h-4" />
             </button>
-            <p className="text-xs text-center text-neutral-500 mt-4">
-              * El envío del formulario será implementado con Server Actions.
-            </p>
           </form>
         </div>
       </div>

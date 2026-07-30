@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, BookOpen, Sparkles, Send } from "lucide-react";
+import { ArrowLeft, BookOpen, Sparkles, Send, Volume2 } from "lucide-react";
 import Image from "next/image";
 
 export default function PoetryPage() {
@@ -11,7 +11,7 @@ export default function PoetryPage() {
         </Link>
 
         {/* Main Info */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-24 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 mb-20 items-center">
           <div className="flex flex-col">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-medium w-fit mb-6">
               <Sparkles className="w-3.5 h-3.5" />
@@ -19,7 +19,9 @@ export default function PoetryPage() {
             </div>
 
             <h1 className="text-5xl font-bold tracking-tight mb-2 text-white">Migajas</h1>
-            <p className="text-sm font-medium text-neutral-400 mb-6 uppercase tracking-wider">Poemario de Tatiana Ravasa</p>
+            <p className="text-sm font-medium text-neutral-400 mb-6 uppercase tracking-wider">
+              Poemario de Mariaa Monroy <span className="text-neutral-500 font-normal">(Tatiana Ravasa)</span>
+            </p>
 
             <p className="text-xl text-neutral-400 font-light mb-8 leading-relaxed">
               Una obra donde las palabras retenidas encuentran su cauce, abriendo una brecha por donde la memoria del alma se expresa, se libera y vuelve a respirar.
@@ -52,13 +54,27 @@ export default function PoetryPage() {
             <div className="relative w-full max-w-md aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
               <Image
                 src="/images/poetry-book.jpeg"
-                alt="Portada de Migajas - Poemario de Tatiana Ravasa"
+                alt="Portada de Migajas - Poemario de Mariaa Monroy (Tatiana Ravasa)"
                 fill
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
             </div>
           </div>
+        </div>
+
+        {/* Audio Poem Recitations Section */}
+        <div className="bg-neutral-900/40 rounded-3xl p-8 md:p-10 border border-white/5 mb-16 shadow-2xl">
+          <div className="flex items-center gap-3 mb-6">
+            <Volume2 className="w-6 h-6 text-neutral-400" />
+            <div>
+              <h2 className="text-2xl font-bold text-white">Recitados en audio</h2>
+              <p className="text-xs text-neutral-400 font-light">Poemas narrados en voz de la autora (Mariaa Monroy).</p>
+            </div>
+          </div>
+          <p className="text-sm text-neutral-400 font-light italic">
+            Próximamente audios de los poemas recitados en directo por Mariaa Monroy.
+          </p>
         </div>
 
         {/* Prologue Excerpt Section */}
