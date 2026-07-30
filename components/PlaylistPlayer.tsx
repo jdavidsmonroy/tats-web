@@ -21,6 +21,7 @@ export default function PlaylistPlayer({ tracks, albumTitle = "Álbum en vivo" }
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [volume, setVolume] = useState(1);
   const [isMuted, setIsMuted] = useState(false);
 
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -78,10 +79,20 @@ export default function PlaylistPlayer({ tracks, albumTitle = "Álbum en vivo" }
     }
   };
 
+  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newVol = parseFloat(e.target.value);
+    setVolume(newVol);
+    if (audioRef.current) {
+      audioRef.current.volume = newVol;
+      setIsMuted(newVol === 0);
+    }
+  };
+
   const toggleMute = () => {
     if (audioRef.current) {
-      audioRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
+      const nextMuted = !isMuted;
+      audioRef.current.muted = nextMuted;
+      setIsMuted(nextMuted);
     }
   };
 
@@ -94,7 +105,6 @@ export default function PlaylistPlayer({ tracks, albumTitle = "Álbum en vivo" }
 
   return (
     <div className="w-full bg-neutral-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl transition-all duration-300">
-      {/* Hidden HTML5 Audio Element */}
       <audio
         ref={audioRef}
         src={currentTrack?.src}
@@ -103,9 +113,7 @@ export default function PlaylistPlayer({ tracks, albumTitle = "Álbum en vivo" }
         onEnded={handleNext}
       />
 
-      {/* Main Player Display */}
       <div className="flex flex-col md:flex-row items-center gap-6 mb-8 pb-8 border-b border-white/10">
-        {/* Album Artwork / Placeholder */}
         <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-gradient-to-br from-neutral-800 to-black border border-white/10 flex items-center justify-center shadow-inner group flex-shrink-0">
           <Music className={`w-10 h-10 ${isPlaying ? "text-white animate-pulse" : "text-neutral-500"}`} />
           {isPlaying && (
@@ -117,7 +125,6 @@ export default function PlaylistPlayer({ tracks, albumTitle = "Álbum en vivo" }
           )}
         </div>
 
-        {/* Controls & Track Info */}
         <div className="flex-1 w-full flex flex-col justify-center">
           <div className="mb-3 text-center md:text-left">
             <span className="text-xs uppercase tracking-widest text-neutral-400 font-semibold">{albumTitle}</span>
@@ -125,7 +132,6 @@ export default function PlaylistPlayer({ tracks, albumTitle = "Álbum en vivo" }
             <p className="text-sm text-neutral-400 font-light">{currentTrack?.artist || "Deep Roots Duo"}</p>
           </div>
 
-          {/* Progress Bar */}
           <div className="w-full mb-4">
             <input
               type="range"
@@ -141,8 +147,7 @@ export default function PlaylistPlayer({ tracks, albumTitle = "Álbum en vivo" }
             </div>
           </div>
 
-          {/* Controls Bar */}
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-4 mx-auto md:mx-0">
               <button
                 onClick={handlePrev}
@@ -169,18 +174,28 @@ export default function PlaylistPlayer({ tracks, albumTitle = "Álbum en vivo" }
               </button>
             </div>
 
-            <button
-              onClick={toggleMute}
-              className="hidden md:flex p-2 text-neutral-400 hover:text-white transition-colors"
-              title={isMuted ? "Activar sonido" : "Silenciar"}
-            >
-              {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={toggleMute}
+                className="p-2 text-neutral-400 hover:text-white transition-colors"
+                title={isMuted ? "Activar sonido" : "Silenciar"}
+              >
+                {isMuted || volume === 0 ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5 text-white" />}
+              </button>
+              <input
+                type="range"
+                min={0}
+                max={1}
+                step={0.01}
+                value={isMuted ? 0 : volume}
+                onChange={handleVolumeChange}
+                className="w-20 md:w-24 h-1.5 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-white"
+              />
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Playlist Track List */}
       <div className="flex flex-col gap-2">
         <h4 className="text-xs uppercase tracking-wider text-neutral-400 font-semibold mb-2 px-3">
           Lista de canciones ({tracks.length})
