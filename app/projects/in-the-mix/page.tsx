@@ -14,26 +14,26 @@ export default function InTheMixPage() {
   const audioTracks: Track[] = [
     {
       id: "itm-1",
-      title: "Sesión en directo - Tema 1",
-      artist: "In The Mix",
+      title: "Kiss",
+      artist: "Prince and The Revolution - In The Mix Cover",
       src: "/audio/in-the-mix/track-1.m4a",
     },
     {
       id: "itm-2",
-      title: "Sesión en directo - Tema 2",
-      artist: "In The Mix",
+      title: "Seven Nation Army",
+      artist: "The White Stripes - In The Mix Cover",
       src: "/audio/in-the-mix/track-2.m4a",
     },
     {
       id: "itm-3",
-      title: "Sesión en directo - Tema 3",
-      artist: "In The Mix",
+      title: "Take Me to the River",
+      artist: "Al Green - In The Mix Cover",
       src: "/audio/in-the-mix/track-3.m4a",
     },
     {
       id: "itm-4",
-      title: "Sesión en directo - Tema 4",
-      artist: "In The Mix",
+      title: "My Favourite Game",
+      artist: "The Cardigans - In The Mix Cover",
       src: "/audio/in-the-mix/track-4.m4a",
     },
   ];
