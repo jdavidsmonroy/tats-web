@@ -90,7 +90,7 @@ export default function Navbar() {
                     <BookOpen className="w-4 h-4 text-neutral-400 flex-shrink-0" />
                     <div className="flex flex-col">
                       <span className="font-semibold text-xs text-white">Migajas</span>
-                      <span className="text-[10px] text-neutral-400 font-light">Poemario de Tatiana Ravasa</span>
+                      <span className="text-[10px] text-neutral-400 font-light">Poemario de Tatiana Ravassa</span>
                     </div>
                   </Link>
 

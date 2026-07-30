@@ -20,7 +20,7 @@ export default function PoetryPage() {
 
             <h1 className="text-5xl font-bold tracking-tight mb-2 text-white">Migajas</h1>
             <p className="text-sm font-medium text-neutral-400 mb-6 uppercase tracking-wider">
-              Poemario de Mariaa Monroy <span className="text-neutral-500 font-normal">(Tatiana Ravasa)</span>
+              Poemario de Maria Monroy <span className="text-neutral-500 font-normal">(Tatiana Ravassa)</span>
             </p>
 
             <p className="text-xl text-neutral-400 font-light mb-8 leading-relaxed">
@@ -54,7 +54,7 @@ export default function PoetryPage() {
             <div className="relative w-full max-w-md aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
               <Image
                 src="/images/poetry-book.jpeg"
-                alt="Portada de Migajas - Poemario de Mariaa Monroy (Tatiana Ravasa)"
+                alt="Portada de Migajas - Poemario de Maria Monroy (Tatiana Ravassa)"
                 fill
                 className="object-cover"
               />
@@ -69,11 +69,11 @@ export default function PoetryPage() {
             <Volume2 className="w-6 h-6 text-neutral-400" />
             <div>
               <h2 className="text-2xl font-bold text-white">Recitados en audio</h2>
-              <p className="text-xs text-neutral-400 font-light">Poemas narrados en voz de la autora (Mariaa Monroy).</p>
+              <p className="text-xs text-neutral-400 font-light">Poemas narrados en voz de la autora (Maria Monroy).</p>
             </div>
           </div>
           <p className="text-sm text-neutral-400 font-light italic">
-            Próximamente audios de los poemas recitados en directo por Mariaa Monroy.
+            Próximamente audios de los poemas recitados en directo por Maria Monroy.
           </p>
         </div>
 

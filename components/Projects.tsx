@@ -50,7 +50,7 @@ export default function Projects() {
             </div>
             <div className="p-8 relative bg-gradient-to-t from-neutral-900 via-neutral-900 to-transparent -mt-20">
               <h3 className="text-2xl font-bold mb-2">Migajas</h3>
-              <p className="text-neutral-400 mb-6 font-light">Poemario de Tatiana Ravasa. Una obra íntima sobre la memoria del alma, el coraje y la libertad.</p>
+              <p className="text-neutral-400 mb-6 font-light">Poemario de Tatiana Ravassa. Una obra íntima sobre la memoria del alma, el coraje y la libertad.</p>
               <Link href="/projects/poesia" className="inline-flex items-center text-sm font-medium text-white/80 hover:text-white transition-colors relative z-20">
                 Ver más <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
               </Link>
