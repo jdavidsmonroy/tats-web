@@ -39,10 +39,10 @@ export default function InTheMixPage() {
   ];
 
   const featuredVideo: VideoItem = {
-    id: "featured-valerie",
+    id: "featured-walking-on-sunshine",
     type: "mp4",
-    title: "Valerie",
-    subtitle: "Amy Winehouse Cover - Directo",
+    title: "Walking On Sunshine",
+    subtitle: "Katrina & The Waves Cover - Directo",
     mp4Src: "/videos/in-the-mix/featured.mp4",
     posterSrc: "/images/in-the-mix/poster-featured.jpg",
   };
