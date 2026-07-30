@@ -1,13 +1,41 @@
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Headphones } from "lucide-react";
 import ImageSlider from "@/components/ImageSlider";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
+import PlaylistPlayer, { Track } from "@/components/PlaylistPlayer";
 
 export default function InTheMixPage() {
   const images = [
     '/images/in-the-mix/photo1.jpg',
     '/images/in-the-mix/photo2.jpg',
     '/images/in-the-mix/photo3.jpg'
+  ];
+
+  const audioTracks: Track[] = [
+    {
+      id: "itm-1",
+      title: "Sesión en directo - Tema 1",
+      artist: "In The Mix",
+      src: "/audio/in-the-mix/track-1.m4a",
+    },
+    {
+      id: "itm-2",
+      title: "Sesión en directo - Tema 2",
+      artist: "In The Mix",
+      src: "/audio/in-the-mix/track-2.m4a",
+    },
+    {
+      id: "itm-3",
+      title: "Sesión en directo - Tema 3",
+      artist: "In The Mix",
+      src: "/audio/in-the-mix/track-3.m4a",
+    },
+    {
+      id: "itm-4",
+      title: "Sesión en directo - Tema 4",
+      artist: "In The Mix",
+      src: "/audio/in-the-mix/track-4.m4a",
+    },
   ];
 
   const videos = [
@@ -28,7 +56,7 @@ export default function InTheMixPage() {
         </Link>
         
         {/* Main Info */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-24">
+        <div className="grid lg:grid-cols-2 gap-12 mb-20">
           <div className="flex flex-col">
             <h1 className="text-5xl font-bold tracking-tight mb-4 text-white">In The Mix</h1>
             <p className="text-xl text-neutral-400 font-light mb-8">
@@ -51,6 +79,18 @@ export default function InTheMixPage() {
               </p>
             </div>
           </div>
+        </div>
+
+        {/* Audio Player Section */}
+        <div className="mb-20">
+          <div className="flex items-center gap-3 mb-8">
+            <Headphones className="w-6 h-6 text-neutral-400" />
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight text-white">Extractos de audio</h2>
+              <p className="text-neutral-400 text-sm font-light">Escucha grabaciones y directos de In The Mix.</p>
+            </div>
+          </div>
+          <PlaylistPlayer tracks={audioTracks} albumTitle="In The Mix - Directos & Demos" />
         </div>
 
         {/* Video Section */}

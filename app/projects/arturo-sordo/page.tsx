@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowLeft, Disc, ExternalLink, Music2 } from "lucide-react";
+import { ArrowLeft, Disc, ExternalLink, Music2, Guitar } from "lucide-react";
+import AudioPlayer from "@/components/AudioPlayer";
 
 export default function ArturoSordoPage() {
   const albums = [
@@ -31,7 +32,7 @@ export default function ArturoSordoPage() {
         <div className="mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs text-white/90 font-medium mb-4 border border-white/10">
             <Music2 className="w-3.5 h-3.5" />
-            <span>Colaboraciones en estudio</span>
+            <span>Colaboraciones en estudio & proyectos paralelos</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
             Arturo Sordo ft. Tats
@@ -42,10 +43,10 @@ export default function ArturoSordoPage() {
         </div>
 
         {/* Spotify Albums Embeds */}
-        <div className="space-y-8 mb-16">
+        <div className="space-y-8 mb-20">
           <h2 className="text-2xl font-bold tracking-tight flex items-center gap-2">
             <Disc className="w-5 h-5 text-neutral-400" />
-            <span>Escuchar en Spotify</span>
+            <span>Escuchar en Spotify (Arturo Sordo)</span>
           </h2>
 
           <div className="grid md:grid-cols-1 gap-6">
@@ -78,6 +79,25 @@ export default function ArturoSordoPage() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Parallel Project: Tats & Olcay Yavuz */}
+        <div className="bg-neutral-900/60 border border-white/10 rounded-3xl p-8 shadow-2xl">
+          <div className="flex items-center gap-3 mb-4">
+            <Guitar className="w-6 h-6 text-neutral-400" />
+            <div>
+              <span className="text-xs uppercase tracking-wider text-neutral-400 font-semibold">Próximo lanzamiento</span>
+              <h2 className="text-2xl font-bold text-white">Tats & Olcay Yavuz</h2>
+            </div>
+          </div>
+          <p className="text-neutral-400 text-sm font-light leading-relaxed mb-6">
+            Proyecto paralelo en formato dúo junto a Olcay Yavuz (guitarrista de In The Mix). Un adelanto exclusivo de su nuevo trabajo.
+          </p>
+
+          <AudioPlayer
+            src="/audio/olcay-yavuz/colaboracion-olcay.m4a"
+            title="Escuchar adelanto exclusivo (Tats & Olcay Yavuz)"
+          />
         </div>
       </div>
     </main>
