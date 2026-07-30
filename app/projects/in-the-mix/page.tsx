@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, Headphones } from "lucide-react";
+import { ArrowLeft, Headphones, Film } from "lucide-react";
 import ImageSlider from "@/components/ImageSlider";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
 import PlaylistPlayer, { Track } from "@/components/PlaylistPlayer";
@@ -38,7 +38,20 @@ export default function InTheMixPage() {
     },
   ];
 
-  const videos = [
+  const selfHostedVideos = [
+    {
+      src: "/videos/in-the-mix/one-way-or-another.mp4",
+      title: "One Way or Another",
+      subtitle: "Blondie Cover",
+    },
+    {
+      src: "/videos/in-the-mix/respect.mp4",
+      title: "Respect",
+      subtitle: "Aretha Franklin Cover",
+    },
+  ];
+
+  const youtubeVideos = [
     { id: "OuZmQrFIocg", title: "I Dont Need No Doctor" },
     { id: "IvM60YLpIF4", title: "Play That Funky Music" },
     { id: "ZjqBppcb2zs", title: "Respect Yourself" },
@@ -71,8 +84,14 @@ export default function InTheMixPage() {
           <div className="flex flex-col">
             <h2 className="text-2xl font-bold tracking-tight mb-6 text-white">Destacado</h2>
             <div className="bg-neutral-900/50 rounded-3xl p-6 border border-white/5 h-fit shadow-2xl space-y-6">
-              <div className="w-full h-[280px] rounded-xl overflow-hidden border border-white/10">
-                <YouTubeEmbed videoId="Kwgd9jIEdag" title="In The Mix Live" />
+              <div className="w-full aspect-video rounded-xl overflow-hidden border border-white/10 bg-black">
+                <video
+                  src="/videos/in-the-mix/featured.mp4"
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <p className="text-neutral-400 text-sm font-light leading-relaxed">
                 Nuestra puesta en escena destaca por la frescura y la conexión con el público. Hacemos que cada concierto sea una auténtica fiesta de Soul y Funk.
@@ -95,9 +114,36 @@ export default function InTheMixPage() {
 
         {/* Video Section */}
         <div>
-          <h2 className="text-3xl font-bold tracking-tight mb-8 text-white">Más conciertos en directo</h2>
+          <div className="flex items-center gap-3 mb-8">
+            <Film className="w-6 h-6 text-neutral-400" />
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight text-white">Más conciertos en directo</h2>
+              <p className="text-neutral-400 text-sm font-light">Vídeos en vivo y actuaciones del grupo.</p>
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {videos.map((video) => (
+            {/* Self-hosted MP4 videos */}
+            {selfHostedVideos.map((video, idx) => (
+              <div key={idx} className="bg-neutral-900 rounded-3xl overflow-hidden border border-white/5 shadow-2xl flex flex-col">
+                <div className="aspect-video w-full bg-black border-b border-white/5">
+                  <video
+                    src={video.src}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-4">
+                  <h3 className="font-semibold text-sm text-white">{video.title}</h3>
+                  <p className="text-xs text-neutral-400 font-light">{video.subtitle}</p>
+                </div>
+              </div>
+            ))}
+
+            {/* YouTube videos */}
+            {youtubeVideos.map((video) => (
               <div key={video.id} className="bg-neutral-900 rounded-3xl overflow-hidden border border-white/5 aspect-video shadow-2xl">
                 <YouTubeEmbed videoId={video.id} title={video.title} />
               </div>
