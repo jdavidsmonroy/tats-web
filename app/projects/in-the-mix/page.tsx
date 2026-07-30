@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { ArrowLeft, Headphones, Film } from "lucide-react";
+import { ArrowLeft, Headphones } from "lucide-react";
 import ImageSlider from "@/components/ImageSlider";
-import YouTubeEmbed from "@/components/YouTubeEmbed";
 import PlaylistPlayer, { Track } from "@/components/PlaylistPlayer";
+import VideoGallery, { VideoItem } from "@/components/VideoGallery";
 
 export default function InTheMixPage() {
   const images = [
@@ -38,27 +38,81 @@ export default function InTheMixPage() {
     },
   ];
 
-  const selfHostedVideos = [
+  const featuredVideo: VideoItem = {
+    id: "featured-valerie",
+    type: "mp4",
+    title: "Valerie",
+    subtitle: "Amy Winehouse Cover - Directo",
+    mp4Src: "/videos/in-the-mix/featured.mp4",
+    posterSrc: "/images/in-the-mix/poster-featured.jpg",
+  };
+
+  const gridVideos: VideoItem[] = [
     {
-      src: "/videos/in-the-mix/one-way-or-another.mp4",
+      id: "mp4-one-way",
+      type: "mp4",
       title: "One Way or Another",
       subtitle: "Blondie Cover",
+      mp4Src: "/videos/in-the-mix/one-way-or-another.mp4",
+      posterSrc: "/images/in-the-mix/poster-one-way.jpg",
     },
     {
-      src: "/videos/in-the-mix/respect.mp4",
+      id: "mp4-respect",
+      type: "mp4",
       title: "Respect",
       subtitle: "Aretha Franklin Cover",
+      mp4Src: "/videos/in-the-mix/respect.mp4",
+      posterSrc: "/images/in-the-mix/poster-respect.jpg",
     },
-  ];
-
-  const youtubeVideos = [
-    { id: "OuZmQrFIocg", title: "I Dont Need No Doctor" },
-    { id: "IvM60YLpIF4", title: "Play That Funky Music" },
-    { id: "ZjqBppcb2zs", title: "Respect Yourself" },
-    { id: "UgqEHsS_yT4", title: "My Favourite Game" },
-    { id: "MoS11kailzE", title: "Ain´t No Sunshine" },
-    { id: "JKs3Fr5P4Lo", title: "Favourite Game" },
-    { id: "_quJOuMxZCc", title: "Take Me to the River" }
+    {
+      id: "yt-1",
+      type: "youtube",
+      title: "I Dont Need No Doctor",
+      subtitle: "Ray Charles Cover - Live",
+      youtubeId: "OuZmQrFIocg",
+    },
+    {
+      id: "yt-2",
+      type: "youtube",
+      title: "Play That Funky Music",
+      subtitle: "Wild Cherry Cover - Live",
+      youtubeId: "IvM60YLpIF4",
+    },
+    {
+      id: "yt-3",
+      type: "youtube",
+      title: "Respect Yourself",
+      subtitle: "The Staple Singers Cover - Live",
+      youtubeId: "ZjqBppcb2zs",
+    },
+    {
+      id: "yt-4",
+      type: "youtube",
+      title: "My Favourite Game",
+      subtitle: "The Cardigans Cover - Live",
+      youtubeId: "UgqEHsS_yT4",
+    },
+    {
+      id: "yt-5",
+      type: "youtube",
+      title: "Ain´t No Sunshine",
+      subtitle: "Bill Withers Cover - Live",
+      youtubeId: "MoS11kailzE",
+    },
+    {
+      id: "yt-6",
+      type: "youtube",
+      title: "Favourite Game",
+      subtitle: "The Cardigans Cover - Live",
+      youtubeId: "JKs3Fr5P4Lo",
+    },
+    {
+      id: "yt-7",
+      type: "youtube",
+      title: "Take Me to the River",
+      subtitle: "Al Green Cover - Live",
+      youtubeId: "_quJOuMxZCc",
+    },
   ];
 
   return (
@@ -81,23 +135,7 @@ export default function InTheMixPage() {
             </div>
           </div>
           
-          <div className="flex flex-col">
-            <h2 className="text-2xl font-bold tracking-tight mb-6 text-white">Destacado</h2>
-            <div className="bg-neutral-900/50 rounded-3xl p-6 border border-white/5 h-fit shadow-2xl space-y-6">
-              <div className="w-full aspect-video rounded-xl overflow-hidden border border-white/10 bg-black">
-                <video
-                  src="/videos/in-the-mix/featured.mp4"
-                  controls
-                  playsInline
-                  preload="metadata"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <p className="text-neutral-400 text-sm font-light leading-relaxed">
-                Nuestra puesta en escena destaca por la frescura y la conexión con el público. Hacemos que cada concierto sea una auténtica fiesta de Soul y Funk.
-              </p>
-            </div>
-          </div>
+          <VideoGallery featuredVideo={featuredVideo} videos={gridVideos} />
         </div>
 
         {/* Audio Player Section */}
@@ -110,45 +148,6 @@ export default function InTheMixPage() {
             </div>
           </div>
           <PlaylistPlayer tracks={audioTracks} albumTitle="In The Mix - Directos & Demos" />
-        </div>
-
-        {/* Video Section */}
-        <div>
-          <div className="flex items-center gap-3 mb-8">
-            <Film className="w-6 h-6 text-neutral-400" />
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight text-white">Más conciertos en directo</h2>
-              <p className="text-neutral-400 text-sm font-light">Vídeos en vivo y actuaciones del grupo.</p>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Self-hosted MP4 videos */}
-            {selfHostedVideos.map((video, idx) => (
-              <div key={idx} className="bg-neutral-900 rounded-3xl overflow-hidden border border-white/5 shadow-2xl flex flex-col">
-                <div className="aspect-video w-full bg-black border-b border-white/5">
-                  <video
-                    src={video.src}
-                    controls
-                    playsInline
-                    preload="metadata"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-sm text-white">{video.title}</h3>
-                  <p className="text-xs text-neutral-400 font-light">{video.subtitle}</p>
-                </div>
-              </div>
-            ))}
-
-            {/* YouTube videos */}
-            {youtubeVideos.map((video) => (
-              <div key={video.id} className="bg-neutral-900 rounded-3xl overflow-hidden border border-white/5 aspect-video shadow-2xl">
-                <YouTubeEmbed videoId={video.id} title={video.title} />
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </main>
