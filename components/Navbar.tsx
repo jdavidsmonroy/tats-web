@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import clsx from "clsx";
 import { useState, useEffect } from "react";
-import { ChevronDown, Music, BookOpen, Mic2 } from "lucide-react";
+import { ChevronDown, Music, BookOpen, Mic2, Disc } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -59,7 +59,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 8, scale: 0.95 }}
                   transition={{ duration: 0.15 }}
-                  className="absolute top-full left-0 mt-2 w-60 bg-neutral-900/95 backdrop-blur-xl border border-white/10 rounded-2xl p-2 shadow-2xl z-50"
+                  className="absolute top-full left-0 mt-2 w-64 bg-neutral-900/95 backdrop-blur-xl border border-white/10 rounded-2xl p-2 shadow-2xl z-50"
                 >
                   <Link
                     href="/projects/in-the-mix"
@@ -91,6 +91,17 @@ export default function Navbar() {
                     <div className="flex flex-col">
                       <span className="font-semibold text-xs text-white">Migajas</span>
                       <span className="text-[10px] text-neutral-400 font-light">Poemario de Tatiana Ravasa</span>
+                    </div>
+                  </Link>
+
+                  <Link
+                    href="/projects/arturo-sordo"
+                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/10 text-white/80 hover:text-white transition-colors"
+                  >
+                    <Disc className="w-4 h-4 text-neutral-400 flex-shrink-0" />
+                    <div className="flex flex-col">
+                      <span className="font-semibold text-xs text-white">Arturo Sordo ft. Tats</span>
+                      <span className="text-[10px] text-neutral-400 font-light">Colaboraciones en estudio</span>
                     </div>
                   </Link>
                 </motion.div>

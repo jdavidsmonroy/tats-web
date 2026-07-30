@@ -6,15 +6,15 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function Gallery() {
   const images = [
-    { src: "/images/artmoniza/tats-guitarra.jpeg", title: "Tats", className: "col-span-2 row-span-2" },
-    { src: "/images/artmoniza/photo3.jpg", title: "Tats", className: "col-span-1" },
+    { src: "/images/tats/tats-guitarra.jpeg", title: "Tats", className: "col-span-2 row-span-2" },
+    { src: "/images/tats/tats-byn.jpeg", title: "Tats", className: "col-span-1" },
     { src: "/images/in-the-mix/photo1.jpg", title: "In The Mix", className: "col-span-1" },
-    { src: "/images/artmoniza/photo4.jpg", title: "Tats", className: "col-span-2 md:col-span-2" },
+    { src: "/images/tats/photo4.jpg", title: "Tats", className: "col-span-2 md:col-span-2" },
     { src: "/images/deep-roots/photo1.jpg", title: "Deep Roots Duo", className: "col-span-1" },
-    { src: "/images/artmoniza/photo5.jpg", title: "Tats", className: "col-span-1" },
+    { src: "/images/tats/photo5.jpg", title: "Tats", className: "col-span-1" },
     { src: "/images/in-the-mix/photo2.jpg", title: "In The Mix en directo", className: "col-span-2 md:col-span-2" },
-    { src: "/images/deep-roots/photo3.webp", title: "Deep Roots Duo", className: "col-span-1" },
-    { src: "/images/artmoniza/photo1.jpg", title: "Tats", className: "col-span-1" },
+    { src: "/images/deep-roots/photo2.jpg", title: "Deep Roots Duo", className: "col-span-1" },
+    { src: "/images/tats/photo1.jpg", title: "Tats", className: "col-span-1" },
   ];
 
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);

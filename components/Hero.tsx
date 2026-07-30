@@ -9,7 +9,7 @@ export default function Hero() {
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0 bg-neutral-900">
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black z-10" />
-        <div className="w-full h-full bg-[url('/images/artmoniza/photo1.jpg')] bg-cover bg-center opacity-40 mix-blend-overlay" />
+        <div className="w-full h-full bg-[url('/images/tats/photo1.jpg')] bg-cover bg-center opacity-40 mix-blend-overlay" />
       </div>
 
       <div className="relative z-10 text-center px-6 mt-16">

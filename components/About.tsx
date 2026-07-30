@@ -4,7 +4,7 @@ export default function About() {
       <div className="container mx-auto max-w-5xl">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="aspect-[4/5] bg-neutral-900 rounded-3xl overflow-hidden relative border border-white/10 shadow-2xl group">
-            <div className="w-full h-full bg-[url('/images/artmoniza/tats-guitarra.jpeg')] bg-cover bg-center -scale-x-100 opacity-95" />
+            <div className="w-full h-full bg-[url('/images/tats/tats-guitarra.jpeg')] bg-cover bg-center -scale-x-100 opacity-95" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
           </div>
 
