@@ -5,14 +5,15 @@ import { MapPin } from "lucide-react";
 
 export default function VenuesMarquee() {
   const venues = [
-    "Wild Horses Madrid",
-    "Sala Clamores",
-    "Café Berlín",
-    "Moby Dick Club",
-    "El Despertar",
-    "Búho Real",
-    "El Rincón del Arte Nuevo",
-    "Honky Tonk Bar",
+    "Moe",
+    "Gauderes",
+    "Monkey Rock",
+    "La Prensa",
+    "El Patio",
+    "Trotaconventos",
+    "El Nogal",
+    "La Vida Tiene Sentidos",
+    "Café Artesanal",
   ];
 
   // Duplicate array for seamless infinite scroll
