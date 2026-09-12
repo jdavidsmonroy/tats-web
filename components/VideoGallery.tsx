@@ -48,10 +48,10 @@ export default function VideoGallery({ featuredVideo, videos }: VideoGalleryProp
       {/* Featured Video Card */}
       <div className="flex flex-col">
         <h2 className="text-2xl font-bold tracking-tight mb-6 text-white">Destacado</h2>
-        <div className="bg-neutral-900/50 rounded-3xl p-6 border border-white/5 h-fit shadow-2xl space-y-6">
+        <div className="bg-neutral-900/50 rounded-3xl p-6 border border-white/10 h-fit space-y-6">
           <div
             onClick={() => setActiveVideo(featuredVideo)}
-            className="group relative w-full aspect-video rounded-xl overflow-hidden border border-white/10 bg-black cursor-pointer shadow-lg"
+            className="group relative w-full aspect-video rounded-3xl overflow-hidden border border-white/10 bg-black cursor-pointer"
           >
             <Image
               src={featuredVideo.posterSrc || "/images/in-the-mix/photo1.jpg"}
@@ -63,7 +63,7 @@ export default function VideoGallery({ featuredVideo, videos }: VideoGalleryProp
 
             {/* Play Button Overlay */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-14 h-14 rounded-full bg-white/90 text-black flex items-center justify-center group-hover:scale-110 active:scale-95 transition-all shadow-2xl backdrop-blur-sm">
+              <div className="w-14 h-14 rounded-full bg-white/90 text-black flex items-center justify-center group-hover:scale-110 active:scale-95 transition-all backdrop-blur-sm">
                 <Play className="w-6 h-6 ml-1 fill-black" />
               </div>
             </div>
@@ -104,7 +104,7 @@ export default function VideoGallery({ featuredVideo, videos }: VideoGalleryProp
               <div
                 key={video.id}
                 onClick={() => setActiveVideo(video)}
-                className="group relative bg-neutral-900 rounded-3xl overflow-hidden border border-white/5 shadow-2xl cursor-pointer hover:border-white/20 transition-all duration-300 flex flex-col"
+                className="group relative bg-neutral-900 rounded-3xl overflow-hidden border border-white/10 cursor-pointer hover:border-white/20 transition-all duration-300 flex flex-col"
               >
                 <div className="aspect-video w-full bg-black relative overflow-hidden">
                   <Image
@@ -118,7 +118,7 @@ export default function VideoGallery({ featuredVideo, videos }: VideoGalleryProp
 
                   {/* Play Button Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center group-hover:scale-110 active:scale-95 transition-all shadow-xl backdrop-blur-sm">
+                    <div className="w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center group-hover:scale-110 active:scale-95 transition-all backdrop-blur-sm">
                       <Play className="w-5 h-5 ml-0.5 fill-black" />
                     </div>
                   </div>
@@ -165,7 +165,7 @@ export default function VideoGallery({ featuredVideo, videos }: VideoGalleryProp
               className="relative max-w-5xl w-full max-h-[85vh] flex flex-col items-center justify-center"
             >
               {activeVideo.type === "youtube" ? (
-                <div className="w-full aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black">
+                <div className="w-full aspect-video rounded-3xl overflow-hidden border border-white/10 bg-black">
                   <iframe
                     src={`https://www.youtube.com/embed/${activeVideo.youtubeId}?autoplay=1`}
                     title={activeVideo.title}
@@ -175,13 +175,13 @@ export default function VideoGallery({ featuredVideo, videos }: VideoGalleryProp
                   />
                 </div>
               ) : (
-                <div className="relative max-h-[80vh] rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black flex items-center justify-center">
+                <div className="relative max-h-[80vh] rounded-3xl overflow-hidden border border-white/10 bg-black flex items-center justify-center">
                   <video
                     src={activeVideo.mp4Src}
                     autoPlay
                     controls
                     playsInline
-                    className="max-h-[80vh] max-w-full rounded-2xl object-contain"
+                    className="max-h-[80vh] max-w-full rounded-3xl object-contain"
                   />
                 </div>
               )}

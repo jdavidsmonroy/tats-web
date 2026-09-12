@@ -76,12 +76,12 @@ export default function DeepRootsPage() {
         {/* Main Info */}
         <div className="grid lg:grid-cols-2 gap-12 mb-24">
           <div className="flex flex-col">
-            <h1 className="text-5xl font-bold tracking-tight mb-4 text-white">Deep Roots Duo</h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 text-white">Deep Roots Duo</h1>
             <p className="text-xl text-neutral-400 font-light mb-8">
               Dúo musical especializado en bodas y eventos formado en Madrid en 2024. Nuestro repertorio abarca clásicos del pop-rock, nacional e internacional, en formato acústico.
             </p>
             
-            <div className="aspect-[4/3] bg-neutral-900 rounded-3xl overflow-hidden border border-white/5 relative shadow-2xl">
+            <div className="aspect-[4/3] bg-neutral-900 rounded-3xl overflow-hidden border border-white/10 relative">
               <ImageSlider images={images} />
             </div>
           </div>
@@ -98,7 +98,7 @@ export default function DeepRootsPage() {
 
         {/* Video Section */}
         <div>
-          <h2 className="text-3xl font-bold tracking-tight mb-6 text-white">Momentos en directo</h2>
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-6 text-white">Momentos en directo</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {instagramReels.map((reel, i) => (
               <InstagramEmbed key={i} url={reel.url} title={reel.title} />

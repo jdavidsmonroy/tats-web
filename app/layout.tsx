@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { siteConfig } from "@/lib/site";
+import { getUpcomingGigs } from "@/lib/gigs";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,18 +49,20 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gigs = await getUpcomingGigs();
+
   return (
     <html
       lang="es"
       className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-black text-white selection:bg-white/20">
-        <Navbar />
+        <Navbar hasGigs={gigs.length > 0} />
         <div className="flex-grow">{children}</div>
         <Footer />
       </body>

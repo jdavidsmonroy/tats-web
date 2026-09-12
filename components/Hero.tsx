@@ -38,7 +38,7 @@ export default function Hero() {
         >
           <Link
             href="#contact"
-            className="inline-flex h-14 items-center justify-center rounded-full bg-white px-8 text-sm font-medium text-black transition-transform active:scale-95 hover:bg-neutral-200 shadow-2xl"
+            className="inline-flex h-14 items-center justify-center rounded-full bg-white px-8 text-sm font-medium text-black transition-transform active:scale-95 hover:bg-neutral-200"
           >
             Contactar / booking
           </Link>

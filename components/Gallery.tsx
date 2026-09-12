@@ -53,21 +53,23 @@ export default function Gallery() {
   }, [handleKeyDown, selectedIndex]);
 
   return (
-    <section id="gallery" className="py-24 bg-black text-white px-6">
+    <section id="gallery" className="scroll-mt-24 py-24 bg-black text-white px-6">
       <div className="container mx-auto max-w-5xl">
         <div className="mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
           <div>
-            <h2 className="text-4xl font-bold tracking-tight mb-2">Galería visual</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">Galería visual</h2>
             <p className="text-neutral-400 font-light">Momentos de Tats, In The Mix & Deep Roots</p>
           </div>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[150px] md:auto-rows-[200px]">
           {images.map((img, i) => (
-            <div 
-              key={i} 
+            <button
+              key={i}
+              type="button"
               onClick={() => setSelectedIndex(i)}
-              className={`bg-neutral-900 rounded-3xl bg-cover bg-center border border-white/5 opacity-85 hover:opacity-100 hover:scale-[1.02] transition-all duration-300 cursor-pointer shadow-2xl ${img.className}`}
+              aria-label={`Ampliar imagen: ${img.title}`}
+              className={`bg-neutral-900 rounded-3xl bg-cover bg-center border border-white/10 opacity-85 hover:opacity-100 hover:border-white/20 hover:scale-[1.02] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black ${img.className}`}
               style={{ backgroundImage: `url(${img.src})` }}
             />
           ))}
@@ -135,7 +137,7 @@ export default function Gallery() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ type: "spring", bounce: 0, duration: 0.3 }}
-                className="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl border border-white/10"
+                className="max-w-full max-h-[80vh] object-contain rounded-3xl border border-white/10"
               />
               <p className="mt-4 text-neutral-300 text-sm font-light text-center">
                 {images[selectedIndex].title}

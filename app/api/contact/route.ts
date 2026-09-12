@@ -64,9 +64,16 @@ export async function POST(request: NextRequest) {
   const email = typeof body.email === "string" ? body.email.trim() : "";
   const message = typeof body.message === "string" ? body.message.trim() : "";
 
-  if (!name || !email || !message) {
+  // La lista de espera del poemario solo pide el correo.
+  const isWaitlist = body.source === "waitlist";
+
+  if (!email || (!isWaitlist && (!name || !message))) {
     return Response.json(
-      { error: "Rellena nombre, email y mensaje." },
+      {
+        error: isWaitlist
+          ? "Escribe tu correo."
+          : "Rellena nombre, email y mensaje.",
+      },
       { status: 400 }
     );
   }
@@ -115,20 +122,28 @@ export async function POST(request: NextRequest) {
     auth: { user: SMTP_USER, pass: SMTP_PASS },
   });
 
-  const subject = sanitizeHeader(`Booking web: ${name}`);
-  const lines = [
-    `Nombre / empresa: ${name}`,
-    `Email de contacto: ${email}`,
-    "",
-    message,
-  ];
+  const subject = sanitizeHeader(
+    isWaitlist ? `Lista de espera Migajas: ${email}` : `Booking web: ${name}`
+  );
+  const lines = isWaitlist
+    ? [
+        "Nueva suscripción a la lista de espera del poemario Migajas.",
+        "",
+        `Email: ${email}`,
+      ]
+    : [
+        `Nombre / empresa: ${name}`,
+        `Email de contacto: ${email}`,
+        "",
+        message,
+      ];
 
   try {
     await transporter.sendMail({
       // El remitente debe ser la cuenta autenticada o Hostinger rechaza el envío.
       from: `"Web ${siteConfig.domain}" <${SMTP_USER}>`,
       to: CONTACT_TO || siteConfig.email,
-      replyTo: `${sanitizeHeader(name)} <${email}>`,
+      replyTo: name ? `${sanitizeHeader(name)} <${email}>` : email,
       subject,
       text: lines.join("\n"),
       html: `<p>${lines

@@ -104,7 +104,7 @@ export default function PlaylistPlayer({ tracks, albumTitle = "Álbum en vivo" }
   };
 
   return (
-    <div className="w-full bg-neutral-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl transition-all duration-300">
+    <div className="w-full bg-neutral-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8 transition-all duration-300">
       <audio
         ref={audioRef}
         src={currentTrack?.src}
@@ -114,7 +114,7 @@ export default function PlaylistPlayer({ tracks, albumTitle = "Álbum en vivo" }
       />
 
       <div className="flex flex-col md:flex-row items-center gap-6 mb-8 pb-8 border-b border-white/10">
-        <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-gradient-to-br from-neutral-800 to-black border border-white/10 flex items-center justify-center shadow-inner group flex-shrink-0">
+        <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-3xl bg-gradient-to-br from-neutral-800 to-black border border-white/10 flex items-center justify-center shadow-inner group flex-shrink-0">
           <Music className={`w-10 h-10 ${isPlaying ? "text-white animate-pulse" : "text-neutral-500"}`} />
           {isPlaying && (
             <div className="absolute bottom-3 flex items-end gap-1 h-4">
@@ -139,7 +139,7 @@ export default function PlaylistPlayer({ tracks, albumTitle = "Álbum en vivo" }
               max={duration || 100}
               value={currentTime}
               onChange={handleSeek}
-              className="w-full h-1.5 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-white hover:accent-neutral-300 transition-colors"
+              className="w-full h-1.5 bg-neutral-800 rounded-3xl appearance-none cursor-pointer accent-white hover:accent-neutral-300 transition-colors"
             />
             <div className="flex justify-between text-xs text-neutral-500 mt-1 font-mono">
               <span>{formatTime(currentTime)}</span>
@@ -159,7 +159,7 @@ export default function PlaylistPlayer({ tracks, albumTitle = "Álbum en vivo" }
 
               <button
                 onClick={togglePlay}
-                className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-lg hover:bg-neutral-200"
+                className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center hover:scale-105 active:scale-95 transition-all hover:bg-neutral-200"
                 title={isPlaying ? "Pausar" : "Reproducir"}
               >
                 {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5 ml-0.5" />}
@@ -189,7 +189,7 @@ export default function PlaylistPlayer({ tracks, albumTitle = "Álbum en vivo" }
                 step={0.01}
                 value={isMuted ? 0 : volume}
                 onChange={handleVolumeChange}
-                className="w-20 md:w-24 h-1.5 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-white"
+                className="w-20 md:w-24 h-1.5 bg-neutral-800 rounded-3xl appearance-none cursor-pointer accent-white"
               />
             </div>
           </div>
@@ -207,7 +207,7 @@ export default function PlaylistPlayer({ tracks, albumTitle = "Álbum en vivo" }
             <div
               key={track.id || idx}
               onClick={() => playTrack(idx)}
-              className={`flex items-center justify-between p-3.5 rounded-2xl cursor-pointer transition-all duration-200 ${
+              className={`flex items-center justify-between p-3.5 rounded-3xl cursor-pointer transition-all duration-200 ${
                 isSelected
                   ? "bg-white/10 border border-white/20 text-white"
                   : "bg-neutral-900/40 hover:bg-white/5 text-neutral-300 border border-transparent"

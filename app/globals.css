@@ -14,6 +14,19 @@ html {
   scroll-behavior: smooth;
 }
 
+/* El navbar es fijo: sin este margen, el inicio de cada sección
+   queda por debajo de la barra al llegar desde un enlace de ancla. */
+[id] {
+  scroll-margin-top: 6rem;
+}
+
+/* Respeta a quien ha pedido menos movimiento en su sistema. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   background-color: var(--background);
   color: var(--foreground);

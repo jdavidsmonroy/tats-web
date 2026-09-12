@@ -140,12 +140,12 @@ export default function InTheMixPage() {
         {/* Main Info */}
         <div className="grid lg:grid-cols-2 gap-12 mb-20">
           <div className="flex flex-col">
-            <h1 className="text-5xl font-bold tracking-tight mb-4 text-white">In The Mix</h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 text-white">In The Mix</h1>
             <p className="text-xl text-neutral-400 font-light mb-8">
               Cuarteto de Soul, Funk y Pop alternativo con base en Madrid. La banda perfecta para aportar alta energía y groove a festivales, conciertos y grandes fiestas.
             </p>
             
-            <div className="aspect-[4/3] bg-neutral-900 rounded-3xl overflow-hidden border border-white/5 relative shadow-2xl">
+            <div className="aspect-[4/3] bg-neutral-900 rounded-3xl overflow-hidden border border-white/10 relative">
               <ImageSlider images={images} />
             </div>
           </div>
@@ -158,7 +158,7 @@ export default function InTheMixPage() {
           <div className="flex items-center gap-3 mb-8">
             <Headphones className="w-6 h-6 text-neutral-400" />
             <div>
-              <h2 className="text-3xl font-bold tracking-tight text-white">Extractos de audio</h2>
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white">Extractos de audio</h2>
               <p className="text-neutral-400 text-sm font-light">Escucha grabaciones y directos de In The Mix.</p>
             </div>
           </div>

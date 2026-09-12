@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { ArrowLeft, BookOpen, Sparkles, Send, Volume2 } from "lucide-react";
+import { ArrowLeft, BookOpen, Sparkles, Volume2 } from "lucide-react";
 import Image from "next/image";
+import WaitlistForm from "@/components/WaitlistForm";
 
 import type { Metadata } from "next";
 
@@ -33,7 +34,7 @@ export default function PoetryPage() {
               <span>Próximo lanzamiento</span>
             </div>
 
-            <h1 className="text-5xl font-bold tracking-tight mb-2 text-white">Migajas</h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-2 text-white">Migajas</h1>
             <p className="text-sm font-medium text-neutral-400 mb-6 uppercase tracking-wider">
               Poemario de Maria Monroy <span className="text-neutral-500 font-normal">(Tatiana Ravassa)</span>
             </p>
@@ -43,30 +44,16 @@ export default function PoetryPage() {
             </p>
 
             {/* Waitlist Form */}
-            <div className="bg-neutral-900/60 p-6 rounded-3xl border border-white/5 shadow-2xl">
+            <div className="bg-neutral-900/60 p-6 rounded-3xl border border-white/10">
               <h3 className="text-lg font-medium text-white mb-2">Sé el primero en enterarte</h3>
               <p className="text-sm text-neutral-400 font-light mb-4">Déjame tu correo para recibir un aviso exclusivo cuando el libro esté listo para preventa.</p>
 
-              <form className="flex flex-col sm:flex-row gap-3">
-                <input
-                  type="email"
-                  placeholder="Tu correo electrónico"
-                  className="bg-neutral-800 border border-white/10 rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:border-white/30 flex-grow"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="bg-white text-black font-medium px-6 py-3 rounded-2xl text-sm hover:bg-neutral-200 transition-colors inline-flex items-center justify-center gap-2"
-                >
-                  <span>Avisarme</span>
-                  <Send className="w-4 h-4" />
-                </button>
-              </form>
+              <WaitlistForm />
             </div>
           </div>
 
           <div className="flex justify-center">
-            <div className="relative w-full max-w-md aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+            <div className="relative w-full max-w-md aspect-[3/4] rounded-3xl overflow-hidden border border-white/10">
               <Image
                 src="/images/poetry-book.jpeg"
                 alt="Portada de Migajas - Poemario de Maria Monroy (Tatiana Ravassa)"
@@ -79,7 +66,7 @@ export default function PoetryPage() {
         </div>
 
         {/* Audio Poem Recitations Section */}
-        <div className="bg-neutral-900/40 rounded-3xl p-8 md:p-10 border border-white/5 mb-16 shadow-2xl">
+        <div className="bg-neutral-900/40 rounded-3xl p-8 md:p-10 border border-white/10 mb-16">
           <div className="flex items-center gap-3 mb-6">
             <Volume2 className="w-6 h-6 text-neutral-400" />
             <div>
@@ -93,7 +80,7 @@ export default function PoetryPage() {
         </div>
 
         {/* Prologue Excerpt Section */}
-        <div className="bg-neutral-900/30 rounded-3xl p-8 md:p-12 border border-white/5 relative overflow-hidden">
+        <div className="bg-neutral-900/30 rounded-3xl p-8 md:p-12 border border-white/10 relative overflow-hidden">
           <div className="max-w-2xl mx-auto text-center">
             <BookOpen className="w-8 h-8 text-neutral-500 mx-auto mb-6" />
             <h2 className="text-2xl font-bold text-white mb-6">Extracto del prólogo</h2>

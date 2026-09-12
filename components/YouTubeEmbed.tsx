@@ -46,7 +46,7 @@ export default function YouTubeEmbed({ videoId, title = "YouTube video player", 
         <motion.div 
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40 shadow-2xl transition-all group-hover:bg-white group-hover:text-black text-white"
+          className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40 transition-all group-hover:bg-white group-hover:text-black text-white"
         >
           <Play className="w-6 h-6 ml-1" />
         </motion.div>

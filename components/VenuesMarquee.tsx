@@ -20,7 +20,7 @@ export default function VenuesMarquee() {
   const marqueeItems = [...venues, ...venues];
 
   return (
-    <section className="py-12 bg-neutral-950 border-y border-white/5 overflow-hidden">
+    <section className="py-12 bg-neutral-950 border-y border-white/10 overflow-hidden">
       <div className="container mx-auto px-6 mb-6">
         <p className="text-center text-xs uppercase tracking-widest text-neutral-500 font-medium flex items-center justify-center gap-2">
           <MapPin className="w-3.5 h-3.5" />
@@ -41,7 +41,7 @@ export default function VenuesMarquee() {
           {marqueeItems.map((venue, i) => (
             <div
               key={i}
-              className="px-6 py-3 rounded-full bg-neutral-900/80 border border-white/5 text-sm text-neutral-300 font-light backdrop-blur-md hover:border-white/20 transition-all flex items-center gap-3 whitespace-nowrap shadow-lg"
+              className="px-6 py-3 rounded-full bg-neutral-900/80 border border-white/10 text-sm text-neutral-300 font-light backdrop-blur-md hover:border-white/20 transition-all flex items-center gap-3 whitespace-nowrap"
             >
               <span className="w-2 h-2 rounded-full bg-white/40" />
               <span>{venue}</span>

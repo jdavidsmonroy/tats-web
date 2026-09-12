@@ -71,7 +71,7 @@ export default function AudioPlayer({ src, title, artist, badge }: AudioPlayerPr
   };
 
   return (
-    <div className="w-full bg-neutral-900 border border-white/10 rounded-3xl p-5 md:p-6 shadow-xl space-y-4">
+    <div className="w-full bg-neutral-900 border border-white/10 rounded-3xl p-5 md:p-6 space-y-4">
       <audio
         ref={audioRef}
         src={src}
@@ -85,7 +85,7 @@ export default function AudioPlayer({ src, title, artist, badge }: AudioPlayerPr
         <div className="flex items-center gap-3.5 min-w-0">
           <button
             onClick={togglePlay}
-            className="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-lg flex-shrink-0"
+            className="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center hover:scale-105 active:scale-95 transition-all flex-shrink-0"
             title={isPlaying ? "Pausar" : "Reproducir"}
           >
             {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5 ml-0.5" />}
@@ -117,7 +117,7 @@ export default function AudioPlayer({ src, title, artist, badge }: AudioPlayerPr
             step={0.01}
             value={isMuted ? 0 : volume}
             onChange={handleVolumeChange}
-            className="w-16 md:w-24 h-1 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-white"
+            className="w-16 md:w-24 h-1 bg-neutral-800 rounded-full appearance-none cursor-pointer accent-white"
           />
         </div>
       </div>
@@ -130,7 +130,7 @@ export default function AudioPlayer({ src, title, artist, badge }: AudioPlayerPr
           max={duration || 100}
           value={currentTime}
           onChange={handleSeek}
-          className="w-full h-1.5 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-white hover:accent-neutral-300 transition-colors"
+          className="w-full h-1.5 bg-neutral-800 rounded-3xl appearance-none cursor-pointer accent-white hover:accent-neutral-300 transition-colors"
         />
         <div className="flex justify-between text-[11px] text-neutral-500 font-mono">
           <span>{formatTime(currentTime)}</span>

@@ -49,21 +49,21 @@ export default function Contact() {
   const disabled = status === "sending";
 
   return (
-    <section id="contact" className="py-24 bg-black text-white px-6">
-      <div className="container mx-auto max-w-4xl">
+    <section id="contact" className="scroll-mt-24 py-24 bg-black text-white px-6">
+      <div className="container mx-auto max-w-5xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold tracking-tight mb-4">Contacto & booking</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Contacto & booking</h2>
           <p className="text-neutral-400 font-light mb-4">¿Quieres contar conmigo para tu próximo evento? Hablemos.</p>
           <a
             href={`mailto:${siteConfig.email}`}
-            className="inline-flex items-center gap-2 text-sm text-neutral-300 hover:text-white transition-colors bg-white/5 border border-white/10 px-4 py-2 rounded-full shadow-lg"
+            className="inline-flex items-center gap-2 text-sm text-neutral-300 hover:text-white transition-colors bg-white/5 border border-white/10 px-4 py-2 rounded-full"
           >
             <Mail className="w-4 h-4 text-neutral-400" />
             <span>{siteConfig.email}</span>
           </a>
         </div>
 
-        <div className="bg-neutral-900 rounded-3xl p-8 md:p-12 border border-white/5 shadow-2xl">
+        <div className="bg-neutral-900 rounded-3xl p-8 md:p-12 border border-white/10">
           {status === "sent" ? (
             <div className="text-center py-8 space-y-4">
               <CheckCircle2 className="w-12 h-12 mx-auto text-white" />
@@ -94,7 +94,7 @@ export default function Contact() {
                     maxLength={120}
                     disabled={disabled}
                     autoComplete="name"
-                    className="w-full bg-neutral-950 border border-white/10 rounded-xl h-12 px-4 text-white focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all disabled:opacity-50"
+                    className="w-full bg-neutral-950 border border-white/10 rounded-2xl h-12 px-4 text-white focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all disabled:opacity-50"
                     placeholder="Tu nombre"
                   />
                 </div>
@@ -110,7 +110,7 @@ export default function Contact() {
                     maxLength={160}
                     disabled={disabled}
                     autoComplete="email"
-                    className="w-full bg-neutral-950 border border-white/10 rounded-xl h-12 px-4 text-white focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all disabled:opacity-50"
+                    className="w-full bg-neutral-950 border border-white/10 rounded-2xl h-12 px-4 text-white focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all disabled:opacity-50"
                     placeholder="tu@email.com"
                   />
                 </div>
@@ -126,7 +126,7 @@ export default function Contact() {
                   required
                   maxLength={5000}
                   disabled={disabled}
-                  className="w-full bg-neutral-950 border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all resize-none disabled:opacity-50"
+                  className="w-full bg-neutral-950 border border-white/10 rounded-2xl p-4 text-white focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all resize-none disabled:opacity-50"
                   placeholder="Cuéntame sobre tu evento..."
                 />
               </div>
@@ -154,7 +154,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={disabled}
-                className="w-full h-14 bg-white text-black rounded-xl font-medium flex items-center justify-center gap-2 hover:bg-neutral-200 transition-colors active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full h-14 bg-white text-black rounded-2xl font-medium flex items-center justify-center gap-2 hover:bg-neutral-200 transition-colors active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {disabled ? (
                   <>Enviando <Loader2 className="w-4 h-4 animate-spin" /></>
