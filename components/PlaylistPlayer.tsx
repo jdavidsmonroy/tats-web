@@ -139,7 +139,7 @@ export default function PlaylistPlayer({ tracks, albumTitle = "Álbum en vivo" }
               max={duration || 100}
               value={currentTime}
               onChange={handleSeek}
-              className="w-full h-1.5 bg-neutral-800 rounded-3xl appearance-none cursor-pointer accent-white hover:accent-neutral-300 transition-colors"
+              className="w-full h-1.5 bg-neutral-800 rounded-full appearance-none cursor-pointer accent-white hover:accent-neutral-300 transition-colors"
             />
             <div className="flex justify-between text-xs text-neutral-500 mt-1 font-mono">
               <span>{formatTime(currentTime)}</span>
@@ -189,7 +189,7 @@ export default function PlaylistPlayer({ tracks, albumTitle = "Álbum en vivo" }
                 step={0.01}
                 value={isMuted ? 0 : volume}
                 onChange={handleVolumeChange}
-                className="w-20 md:w-24 h-1.5 bg-neutral-800 rounded-3xl appearance-none cursor-pointer accent-white"
+                className="w-20 md:w-24 h-1.5 bg-neutral-800 rounded-full appearance-none cursor-pointer accent-white"
               />
             </div>
           </div>
@@ -207,10 +207,12 @@ export default function PlaylistPlayer({ tracks, albumTitle = "Álbum en vivo" }
             <div
               key={track.id || idx}
               onClick={() => playTrack(idx)}
-              className={`flex items-center justify-between p-3.5 rounded-3xl cursor-pointer transition-all duration-200 ${
+              // El estado activo se marca solo con el fondo: un borde aquí
+              // dibujaría un marco dentro del marco de la tarjeta.
+              className={`flex items-center justify-between p-3.5 rounded-2xl cursor-pointer transition-colors duration-200 ${
                 isSelected
-                  ? "bg-white/10 border border-white/20 text-white"
-                  : "bg-neutral-900/40 hover:bg-white/5 text-neutral-300 border border-transparent"
+                  ? "bg-white/10 text-white"
+                  : "bg-neutral-900/40 hover:bg-white/5 text-neutral-300"
               }`}
             >
               <div className="flex items-center gap-3.5 min-w-0">

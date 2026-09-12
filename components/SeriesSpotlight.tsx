@@ -39,8 +39,10 @@ export default function SeriesSpotlight() {
             </div>
           </div>
 
-          <div className="bg-neutral-900 rounded-3xl p-6 border border-white/10">
-            <div className="flex items-baseline justify-between mb-4">
+          {/* Sin caja envolvente: el reproductor y el vídeo ya son una pieza
+              delimitada, y meterlos en otra dibuja dos marcos concéntricos. */}
+          <div>
+            <div className="flex items-baseline justify-between mb-4 px-1">
               <span className="text-xs uppercase tracking-widest text-neutral-500 font-medium">
                 Último tema
               </span>
@@ -49,13 +51,13 @@ export default function SeriesSpotlight() {
 
             {episodio.youtubeId ? (
               <>
-                <div className="aspect-video w-full rounded-2xl overflow-hidden border border-white/10 bg-black">
+                <div className="aspect-video w-full rounded-3xl overflow-hidden border border-white/10 bg-black">
                   <YouTubeEmbed
                     videoId={episodio.youtubeId}
                     title={`${episodio.titulo} - ${episodio.original}`}
                   />
                 </div>
-                <div className="mt-4">
+                <div className="mt-4 px-1">
                   <h3 className="text-lg font-medium text-white">{episodio.titulo}</h3>
                   <p className="text-sm text-neutral-400 font-light">Cover de {episodio.original}</p>
                 </div>

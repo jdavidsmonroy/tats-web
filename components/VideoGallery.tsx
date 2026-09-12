@@ -48,7 +48,9 @@ export default function VideoGallery({ featuredVideo, videos }: VideoGalleryProp
       {/* Featured Video Card */}
       <div className="flex flex-col">
         <h2 className="text-2xl font-bold tracking-tight mb-6 text-white">Destacado</h2>
-        <div className="bg-neutral-900/50 rounded-3xl p-6 border border-white/10 h-fit space-y-6">
+        {/* El vídeo ya es una pieza con su propio marco: envolverlo en otra
+            caja con borde dibujaría dos marcos concéntricos. */}
+        <div className="h-fit space-y-4">
           <div
             onClick={() => setActiveVideo(featuredVideo)}
             className="group relative w-full aspect-video rounded-3xl overflow-hidden border border-white/10 bg-black cursor-pointer"

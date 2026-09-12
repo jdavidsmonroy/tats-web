@@ -130,7 +130,7 @@ export default function AudioPlayer({ src, title, artist, badge }: AudioPlayerPr
           max={duration || 100}
           value={currentTime}
           onChange={handleSeek}
-          className="w-full h-1.5 bg-neutral-800 rounded-3xl appearance-none cursor-pointer accent-white hover:accent-neutral-300 transition-colors"
+          className="w-full h-1.5 bg-neutral-800 rounded-full appearance-none cursor-pointer accent-white hover:accent-neutral-300 transition-colors"
         />
         <div className="flex justify-between text-[11px] text-neutral-500 font-mono">
           <span>{formatTime(currentTime)}</span>
