@@ -2,6 +2,21 @@ import Link from "next/link";
 import { ArrowLeft, BookOpen, Sparkles, Send, Volume2 } from "lucide-react";
 import Image from "next/image";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Poesía",
+  description: "La faceta poética de Tats: libro, textos y recitales.",
+  alternates: {
+    canonical: "/projects/poesia",
+  },
+  openGraph: {
+    title: "Poesía | Tats",
+    description: "La faceta poética de Tats: libro, textos y recitales.",
+    url: "/projects/poesia",
+  },
+};
+
 export default function PoetryPage() {
   return (
     <main className="min-h-screen bg-black pt-24 pb-24 px-6">

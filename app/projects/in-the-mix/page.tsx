@@ -4,6 +4,21 @@ import ImageSlider from "@/components/ImageSlider";
 import PlaylistPlayer, { Track } from "@/components/PlaylistPlayer";
 import VideoGallery, { VideoItem } from "@/components/VideoGallery";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "In The Mix",
+  description: "Repertorio versátil de Tats para eventos, bodas y fiestas: vídeos, fotos y playlist.",
+  alternates: {
+    canonical: "/projects/in-the-mix",
+  },
+  openGraph: {
+    title: "In The Mix | Tats",
+    description: "Repertorio versátil de Tats para eventos, bodas y fiestas: vídeos, fotos y playlist.",
+    url: "/projects/in-the-mix",
+  },
+};
+
 export default function InTheMixPage() {
   const images = [
     '/images/in-the-mix/photo1.jpg',

@@ -5,6 +5,7 @@ import Link from "next/link";
 import clsx from "clsx";
 import { useState, useEffect } from "react";
 import { ChevronDown, Music, BookOpen, Mic2, Disc } from "lucide-react";
+import { siteConfig } from "@/lib/site";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -116,7 +117,7 @@ export default function Navbar() {
 
         <div>
           <a
-            href="https://www.instagram.com/artmoniza/"
+            href={siteConfig.instagram}
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 rounded-full hover:bg-white/10 transition-colors inline-block text-white/70 hover:text-white"

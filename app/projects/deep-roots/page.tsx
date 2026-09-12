@@ -4,6 +4,21 @@ import ImageSlider from "@/components/ImageSlider";
 import InstagramEmbed from "@/components/InstagramEmbed";
 import PlaylistPlayer, { Track } from "@/components/PlaylistPlayer";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Deep Roots",
+  description: "Deep Roots: el proyecto acústico de Tats, con galería, fotos y repertorio.",
+  alternates: {
+    canonical: "/projects/deep-roots",
+  },
+  openGraph: {
+    title: "Deep Roots | Tats",
+    description: "Deep Roots: el proyecto acústico de Tats, con galería, fotos y repertorio.",
+    url: "/projects/deep-roots",
+  },
+};
+
 export default function DeepRootsPage() {
   const images = [
     '/images/deep-roots/photo1.jpg',

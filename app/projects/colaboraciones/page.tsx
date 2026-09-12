@@ -2,6 +2,21 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import AudioPlayer from "@/components/AudioPlayer";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Colaboraciones",
+  description: "Colaboraciones y trabajos de Tats con otros artistas y proyectos.",
+  alternates: {
+    canonical: "/projects/colaboraciones",
+  },
+  openGraph: {
+    title: "Colaboraciones | Tats",
+    description: "Colaboraciones y trabajos de Tats con otros artistas y proyectos.",
+    url: "/projects/colaboraciones",
+  },
+};
+
 export default function ColaboracionesPage() {
   const arturoAlbums = [
     {
