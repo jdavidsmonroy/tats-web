@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import AudioPlayer from "@/components/AudioPlayer";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
-import { serie, episodios } from "@/lib/serie";
+import { serie, episodios, grabacionesAdicionalesOlcay } from "@/lib/serie";
 
 import type { Metadata } from "next";
 
@@ -102,6 +102,29 @@ export default function ColaboracionesPage() {
                   )}
                 </div>
               ))}
+
+              {grabacionesAdicionalesOlcay.length > 0 && (
+                <div className="pt-6 mt-6 border-t border-white/10 space-y-4">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-neutral-500 block mb-2">
+                    Otras grabaciones con Olcay Yavuz
+                  </span>
+                  {grabacionesAdicionalesOlcay.map((pista) => (
+                    <div key={pista.titulo} className="space-y-2">
+                      <AudioPlayer
+                        src={pista.audioSrc}
+                        title={pista.titulo}
+                        artist={`Cover de ${pista.original}`}
+                        badge="Sesión de estudio"
+                      />
+                      {pista.descripcion && (
+                        <p className="text-xs text-neutral-400 font-light pl-1">
+                          {pista.descripcion}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 

@@ -16,23 +16,44 @@ export interface Episodio {
   original: string;
   /** ID del vídeo de YouTube, el que va detrás de `?v=` en la URL. */
   youtubeId?: string;
-  /** Alternativa para episodios que de momento solo existen en audio. */
+  /** Alternativa para episodios que de momento solo existen en audio o respaldo. */
   audioSrc?: string;
+}
+
+export interface GrabacionExtra {
+  titulo: string;
+  original: string;
+  audioSrc: string;
+  descripcion?: string;
 }
 
 export const serie = {
   titulo: "Tats & Olcay Yavuz",
   descripcion:
-    "Proyecto a dúo junto a Olcay Yavuz, guitarrista de In The Mix. Un formato íntimo con un tema nuevo cada semana.",
-  cadencia: "Nuevo tema cada semana",
+    "Proyecto a dúo junto a Olcay Yavuz, guitarrista de In The Mix. Un formato íntimo con un tema nuevo cada domingo.",
+  cadencia: "Nuevo tema cada domingo",
 };
 
 export const episodios: Episodio[] = [
   {
     numero: 1,
+    titulo: "La perla",
+    original: "Rosalía",
+    youtubeId: "ZXsfyHQ1Pfw",
+    audioSrc: "/audio/olcay-yavuz/la-perla.mp3",
+  },
+];
+
+/**
+ * Otras grabaciones y colaboraciones acústicas de Tats con Olcay Yavuz
+ * fuera de la serie semanal de los domingos.
+ */
+export const grabacionesAdicionalesOlcay: GrabacionExtra[] = [
+  {
     titulo: "Hasta la raíz",
     original: "Natalia Lafourcade",
     audioSrc: "/audio/olcay-yavuz/colaboracion-olcay.m4a",
+    descripcion: "Grabación acústica en estudio.",
   },
 ];
 
@@ -40,3 +61,4 @@ export const episodios: Episodio[] = [
 export function ultimoEpisodio(): Episodio | null {
   return episodios[0] ?? null;
 }
+
