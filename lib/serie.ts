@@ -36,6 +36,12 @@ export const serie = {
 
 export const episodios: Episodio[] = [
   {
+    numero: 2,
+    titulo: "Hay amores",
+    original: "Shakira",
+    youtubeId: "ZEr_gSvFtNY",
+  },
+  {
     numero: 1,
     titulo: "La perla",
     original: "Rosalía",
