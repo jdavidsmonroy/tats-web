@@ -4,20 +4,19 @@ import ImageSlider from "@/components/ImageSlider";
 import InstagramEmbed from "@/components/InstagramEmbed";
 import PlaylistPlayer, { Track } from "@/components/PlaylistPlayer";
 
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { musicGroupSchema, breadcrumbSchema } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  title: "Deep Roots",
-  description: "Deep Roots: el proyecto acústico de Tats, con galería, fotos y repertorio.",
-  alternates: {
-    canonical: "/projects/deep-roots",
-  },
-  openGraph: {
-    title: "Deep Roots | Tats",
-    description: "Deep Roots: el proyecto acústico de Tats, con galería, fotos y repertorio.",
-    url: "/projects/deep-roots",
-  },
-};
+export const metadata = pageMetadata({
+  title: "Deep Roots Duo",
+  description: "Dúo acústico de Madrid con repertorio de clásicos del Pop-Rock, ideal para bodas, eventos y espacios íntimos.",
+  path: "/projects/deep-roots",
+  image: "/og/deep-roots.jpg",
+  imageAlt: "Deep Roots Duo, dúo acústico de pop-rock",
+});
+
+
 
 export default function DeepRootsPage() {
   const images = [
@@ -68,6 +67,23 @@ export default function DeepRootsPage() {
 
   return (
     <main className="min-h-screen bg-black pt-24 pb-24 px-6">
+      <JsonLd
+        data={musicGroupSchema({
+          name: "Deep Roots Duo",
+          description:
+            "Dúo acústico de Madrid con repertorio de clásicos del Pop-Rock.",
+          path: "/projects/deep-roots",
+          image: "/og/deep-roots.jpg",
+          genre: ["Pop-Rock", "Acústico"],
+        })}
+      />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Inicio", path: "/" },
+          { name: "Proyectos", path: "/#projects" },
+          { name: "Deep Roots Duo", path: "/projects/deep-roots" },
+        ])}
+      />
       <div className="container mx-auto max-w-5xl">
         <Link href="/#projects" className="inline-flex items-center text-sm text-neutral-400 hover:text-white transition-colors mb-12">
           <ArrowLeft className="w-4 h-4 mr-2" /> Volver a proyectos

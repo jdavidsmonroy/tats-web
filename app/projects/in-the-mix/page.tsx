@@ -4,20 +4,19 @@ import ImageSlider from "@/components/ImageSlider";
 import PlaylistPlayer, { Track } from "@/components/PlaylistPlayer";
 import VideoGallery, { VideoItem } from "@/components/VideoGallery";
 
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { musicGroupSchema, breadcrumbSchema } from "@/lib/schema";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "In The Mix",
-  description: "Repertorio versátil de Tats para eventos, bodas y fiestas: vídeos, fotos y playlist.",
-  alternates: {
-    canonical: "/projects/in-the-mix",
-  },
-  openGraph: {
-    title: "In The Mix | Tats",
-    description: "Repertorio versátil de Tats para eventos, bodas y fiestas: vídeos, fotos y playlist.",
-    url: "/projects/in-the-mix",
-  },
-};
+  description: "Cuarteto de Soul, Funk y Pop alternativo de Madrid. Banda en directo para festivales, conciertos y grandes fiestas.",
+  path: "/projects/in-the-mix",
+  image: "/og/in-the-mix.jpg",
+  imageAlt: "In The Mix, cuarteto de soul y funk de Madrid, en directo",
+});
+
+
 
 export default function InTheMixPage() {
   const images = [
@@ -132,6 +131,23 @@ export default function InTheMixPage() {
 
   return (
     <main className="min-h-screen bg-black pt-24 pb-24 px-6">
+      <JsonLd
+        data={musicGroupSchema({
+          name: "In The Mix",
+          description:
+            "Cuarteto de Soul, Funk y Pop alternativo con base en Madrid.",
+          path: "/projects/in-the-mix",
+          image: "/og/in-the-mix.jpg",
+          genre: ["Soul", "Funk", "Pop"],
+        })}
+      />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Inicio", path: "/" },
+          { name: "Proyectos", path: "/#projects" },
+          { name: "In The Mix", path: "/projects/in-the-mix" },
+        ])}
+      />
       <div className="container mx-auto max-w-5xl">
         <Link href="/#projects" className="inline-flex items-center text-sm text-neutral-400 hover:text-white transition-colors mb-12">
           <ArrowLeft className="w-4 h-4 mr-2" /> Volver a proyectos

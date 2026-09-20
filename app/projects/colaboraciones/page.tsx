@@ -4,20 +4,19 @@ import AudioPlayer from "@/components/AudioPlayer";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
 import { serie, episodios, grabacionesAdicionalesOlcay } from "@/lib/serie";
 
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { videoSchema, breadcrumbSchema } from "@/lib/schema";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Colaboraciones",
-  description: "Colaboraciones y trabajos de Tats con otros artistas y proyectos.",
-  alternates: {
-    canonical: "/projects/colaboraciones",
-  },
-  openGraph: {
-    title: "Colaboraciones | Tats",
-    description: "Colaboraciones y trabajos de Tats con otros artistas y proyectos.",
-    url: "/projects/colaboraciones",
-  },
-};
+  description: "Serie semanal con Olcay Yavuz y colaboraciones vocales de Tats en producciones de estudio de otros artistas.",
+  path: "/projects/colaboraciones",
+  image: "/og/colaboraciones.jpg",
+  imageAlt: "Colaboraciones musicales de Tats",
+});
+
+
 
 export default function ColaboracionesPage() {
   const arturoAlbums = [
@@ -37,6 +36,26 @@ export default function ColaboracionesPage() {
 
   return (
     <main className="min-h-screen bg-black text-white pt-24 pb-24 px-6">
+      {episodios
+        .filter((ep) => ep.youtubeId)
+        .map((ep) => (
+          <JsonLd
+            key={ep.numero}
+            data={videoSchema({
+              name: `${ep.titulo} - ${ep.original} (cover acústico)`,
+              description: `${serie.titulo}: versión acústica de "${ep.titulo}", de ${ep.original}. Episodio ${ep.numero} de la serie semanal.`,
+              youtubeId: ep.youtubeId!,
+              path: "/projects/colaboraciones",
+            })}
+          />
+        ))}
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Inicio", path: "/" },
+          { name: "Proyectos", path: "/#projects" },
+          { name: "Colaboraciones", path: "/projects/colaboraciones" },
+        ])}
+      />
       <div className="container mx-auto max-w-5xl">
         <Link
           href="/#projects"

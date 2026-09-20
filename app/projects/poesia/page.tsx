@@ -3,24 +3,31 @@ import { ArrowLeft, BookOpen, Sparkles, Volume2 } from "lucide-react";
 import Image from "next/image";
 import WaitlistForm from "@/components/WaitlistForm";
 
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { bookSchema, breadcrumbSchema } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  title: "Poesía",
-  description: "La faceta poética de Tats: libro, textos y recitales.",
-  alternates: {
-    canonical: "/projects/poesia",
-  },
-  openGraph: {
-    title: "Poesía | Tats",
-    description: "La faceta poética de Tats: libro, textos y recitales.",
-    url: "/projects/poesia",
-  },
-};
+export const metadata = pageMetadata({
+  title: "Migajas",
+  description: "Migajas, el poemario de Tatiana Ravassa: una obra íntima sobre la memoria del alma, el coraje y la libertad.",
+  path: "/projects/poesia",
+  image: "/og/poesia.jpg",
+  imageAlt: "Portada de Migajas, poemario de Tatiana Ravassa",
+});
+
+
 
 export default function PoetryPage() {
   return (
     <main className="min-h-screen bg-black pt-24 pb-24 px-6">
+      <JsonLd data={bookSchema()} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Inicio", path: "/" },
+          { name: "Proyectos", path: "/#projects" },
+          { name: "Migajas", path: "/projects/poesia" },
+        ])}
+      />
       <div className="container mx-auto max-w-5xl">
         <Link href="/#projects" className="inline-flex items-center text-sm text-neutral-400 hover:text-white transition-colors mb-12">
           <ArrowLeft className="w-4 h-4 mr-2" /> Volver a proyectos
