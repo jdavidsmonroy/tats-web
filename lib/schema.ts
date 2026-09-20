@@ -18,7 +18,9 @@ export function personSchema() {
     email: `mailto:${siteConfig.email}`,
     image: abs(siteConfig.ogImage),
     description: siteConfig.description,
-    genre: ["Soul", "Funk", "Pop", "Pop-Rock", "Acústico"],
+    // Mismos estilos que declara su perfil de Instagram, para que la
+    // entidad sea coherente allá donde Google la encuentre.
+    genre: ["Pop", "Rock", "Soul", "Blues", "Funk", "Acústico"],
     foundingLocation: {
       "@type": "Place",
       name: siteConfig.city,
