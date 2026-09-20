@@ -159,3 +159,38 @@ export function bookSchema() {
     url: abs("/projects/poesia"),
   };
 }
+
+/** Servicio de música en directo: lo que se contrata desde la web. */
+export function serviceSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Música en directo para bodas y eventos",
+    name: "Música en directo para bodas y eventos",
+    description:
+      "Música en directo para bodas, ceremonias y eventos de empresa en formato acústico a dúo, banda completa o voz solista.",
+    provider: { "@id": personId },
+    areaServed: [
+      { "@type": "City", name: "Madrid" },
+      { "@type": "AdministrativeArea", name: "Segovia" },
+    ],
+    url: abs("/bodas-y-eventos"),
+    image: abs("/og/bodas-y-eventos.jpg"),
+  };
+}
+
+/** Preguntas frecuentes: Google puede mostrarlas desplegadas en el resultado. */
+export function faqSchema(faqs: { pregunta: string; respuesta: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.pregunta,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: f.respuesta,
+      },
+    })),
+  };
+}

@@ -3,6 +3,7 @@ import { siteConfig } from "@/lib/site";
 
 const routes = [
   "/",
+  "/bodas-y-eventos",
   "/projects/in-the-mix",
   "/projects/deep-roots",
   "/projects/poesia",

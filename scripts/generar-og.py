@@ -115,6 +115,9 @@ if __name__ == "__main__":
     make("images/poetry-book.jpeg", "Migajas",
          "Poemario de Tatiana Ravassa", "poesia.jpg",
          focus=0.5, eyebrow="Tats")
+    make("images/tats/tats-guitarra.jpeg", "Bodas y eventos",
+         "Música en directo en Madrid y Segovia", "bodas-y-eventos.jpg",
+         focus=0.5, eyebrow="Tats")
     make("images/tats/photo4.jpg", "Colaboraciones",
          "Serie semanal con Olcay Yavuz", "colaboraciones.jpg",
          focus=0.4, eyebrow="Tats")

@@ -28,7 +28,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="text-lg md:text-2xl text-neutral-300 max-w-2xl mx-auto mb-10 font-light"
         >
-          Versatilidad vocal y escénica. Llevando la energía de la música en directo a otro nivel.
+          Cantante y vocalista en Madrid. Música en directo para bodas, eventos y conciertos.
         </motion.p>
 
         <motion.div

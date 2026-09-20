@@ -53,7 +53,7 @@ export default function Contact() {
       <div className="container mx-auto max-w-5xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Contacto & booking</h2>
-          <p className="text-neutral-400 font-light mb-4">¿Quieres contar conmigo para tu próximo evento? Hablemos.</p>
+          <p className="text-neutral-400 font-light mb-4">¿Buscas música en directo para una boda, una fiesta o un evento? Hablemos.</p>
           <a
             href={`mailto:${siteConfig.email}`}
             className="inline-flex items-center gap-2 text-sm text-neutral-300 hover:text-white transition-colors bg-white/5 border border-white/10 px-4 py-2 rounded-full"

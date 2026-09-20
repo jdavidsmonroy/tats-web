@@ -65,6 +65,7 @@ export default function Navbar({ hasGigs = false }: { hasGigs?: boolean }) {
 
   const sectionLinks = [
     { href: "/#about", label: "Sobre mí" },
+    { href: "/bodas-y-eventos", label: "Bodas y eventos" },
     { href: "/#gallery", label: "Galería" },
     // El ancla solo existe cuando hay fechas futuras que mostrar.
     ...(hasGigs ? [{ href: "/#gigs", label: "Conciertos" }] : []),
@@ -135,6 +136,7 @@ export default function Navbar({ hasGigs = false }: { hasGigs?: boolean }) {
             </AnimatePresence>
           </div>
 
+          <Link href="/bodas-y-eventos" className="hover:text-white transition-colors">Bodas y eventos</Link>
           <Link href="/#gallery" className="hover:text-white transition-colors">Galería</Link>
           {hasGigs && (
             <Link href="/#gigs" className="hover:text-white transition-colors">Conciertos</Link>
