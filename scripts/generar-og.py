@@ -116,7 +116,7 @@ if __name__ == "__main__":
          "Poemario de Tatiana Ravassa", "poesia.jpg",
          focus=0.5, eyebrow="Tats")
     make("images/tats/tats-guitarra.jpeg", "Bodas y eventos",
-         "Música en directo en Madrid y Segovia", "bodas-y-eventos.jpg",
+         "Con base en Madrid, allá donde haga falta", "bodas-y-eventos.jpg",
          focus=0.5, eyebrow="Tats")
     make("images/tats/photo4.jpg", "Colaboraciones",
          "Serie semanal con Olcay Yavuz", "colaboraciones.jpg",

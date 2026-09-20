@@ -8,7 +8,7 @@ import { serviceSchema, faqSchema, breadcrumbSchema } from "@/lib/schema";
 export const metadata = pageMetadata({
   title: "Música para bodas y eventos",
   description:
-    "Música en directo para bodas, ceremonias y eventos de empresa en Madrid y Segovia. Formato acústico a dúo o banda de soul y funk, con repertorio adaptado a cada momento.",
+    "Música en directo para bodas, ceremonias y eventos de empresa. Con base en Madrid y disponibilidad para desplazarse. Formato acústico a dúo, banda de soul y funk o voz solista.",
   path: "/bodas-y-eventos",
   image: "/og/bodas-y-eventos.jpg",
   imageAlt: "Tats cantando con guitarra: música en directo para bodas y eventos",
@@ -63,7 +63,7 @@ const faqs = [
   {
     pregunta: "¿En qué zonas tocáis?",
     respuesta:
-      "La base está en Madrid y es la zona habitual de trabajo, con actuaciones también en la provincia de Segovia. Para otras zonas, lo mejor es escribir y consultarlo.",
+      "La base está en Madrid, pero hay disponibilidad para desplazarse a otras ciudades. Escríbeme indicando dónde es el evento y lo vemos.",
   },
   {
     pregunta: "¿Qué formato encaja mejor en una boda?",
@@ -102,7 +102,7 @@ export default function BodasYEventosPage() {
       <div className="container mx-auto max-w-5xl">
         <header className="mb-20 max-w-3xl">
           <span className="text-xs uppercase tracking-widest text-neutral-500 font-medium block mb-4">
-            Madrid y Segovia
+            Con base en Madrid
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-white">
             Música en directo para bodas y eventos
@@ -111,7 +111,7 @@ export default function BodasYEventosPage() {
             Más de diez años cantando en directo, en formatos que van del dúo
             acústico a la banda completa. La música se elige según el momento:
             una ceremonia no pide lo mismo que una pista de baile a la una de la
-            madrugada.
+            madrugada. Con base en Madrid y disponibilidad para desplazarse.
           </p>
         </header>
 

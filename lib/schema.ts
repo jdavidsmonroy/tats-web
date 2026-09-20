@@ -170,10 +170,13 @@ export function serviceSchema() {
     description:
       "Música en directo para bodas, ceremonias y eventos de empresa en formato acústico a dúo, banda completa o voz solista.",
     provider: { "@id": personId },
-    areaServed: [
-      { "@type": "City", name: "Madrid" },
-      { "@type": "AdministrativeArea", name: "Segovia" },
-    ],
+    // Base en Madrid, pero se acude a otras ciudades: acotar el area a unas
+    // pocas provincias la excluiria del resto de busquedas.
+    areaServed: { "@type": "Country", name: "España" },
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: abs("/bodas-y-eventos"),
+    },
     url: abs("/bodas-y-eventos"),
     image: abs("/og/bodas-y-eventos.jpg"),
   };
