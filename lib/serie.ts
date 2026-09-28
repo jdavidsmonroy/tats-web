@@ -36,6 +36,12 @@ export const serie = {
 
 export const episodios: Episodio[] = [
   {
+    numero: 3,
+    titulo: "La bachata",
+    original: "Manuel Turizo",
+    youtubeId: "N_NNNeOur0Q",
+  },
+  {
     numero: 2,
     titulo: "Hay amores",
     original: "Shakira",
