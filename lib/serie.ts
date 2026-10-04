@@ -36,6 +36,12 @@ export const serie = {
 
 export const episodios: Episodio[] = [
   {
+    numero: 4,
+    titulo: "Toda una vida",
+    original: "Osvaldo Farrés",
+    youtubeId: "lwx2xD30WKw",
+  },
+  {
     numero: 3,
     titulo: "La bachata",
     original: "Manuel Turizo",
