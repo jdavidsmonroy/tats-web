@@ -36,6 +36,12 @@ export const serie = {
 
 export const episodios: Episodio[] = [
   {
+    numero: 5,
+    titulo: "Ateo",
+    original: "C. Tangana y Nathy Peluso",
+    youtubeId: "iPrtKBuNpE4",
+  },
+  {
     numero: 4,
     titulo: "Toda una vida",
     original: "Osvaldo Farrés",
