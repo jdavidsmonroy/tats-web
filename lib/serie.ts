@@ -36,6 +36,12 @@ export const serie = {
 
 export const episodios: Episodio[] = [
   {
+    numero: 6,
+    titulo: "Superestrella",
+    original: "Aitana",
+    youtubeId: "YIXSs6A7gfU",
+  },
+  {
     numero: 5,
     titulo: "Ateo",
     original: "C. Tangana y Nathy Peluso",
