@@ -36,6 +36,12 @@ export const serie = {
 
 export const episodios: Episodio[] = [
   {
+    numero: 7,
+    titulo: "Piensa en mí",
+    original: "Natalia Lafourcade",
+    youtubeId: "ZJ1xqgH0ncY",
+  },
+  {
     numero: 6,
     titulo: "Superestrella",
     original: "Aitana",
