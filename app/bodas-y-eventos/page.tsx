@@ -85,8 +85,8 @@ const momentos = [
   },
 ];
 
-// Zonas donde ya se ha tocado. No es una lista cerrada: la base es Madrid y
-// se acude a otras ciudades.
+// Zonas a las que se desplaza, no un historial de actuaciones: no hay que
+// afirmar que se ha tocado donde no consta. La base es Madrid.
 const zonas = [
   "Madrid capital",
   "Sierra de Madrid",
@@ -225,7 +225,7 @@ export default function BodasYEventosPage() {
 
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3 text-white">
-            Zonas donde toco
+            Zonas a las que me desplazo
           </h2>
           <p className="text-neutral-400 font-light mb-8 max-w-2xl">
             La base está en Madrid y es donde trabajo habitualmente, pero me
