@@ -30,7 +30,7 @@ const formatos = [
     proyecto: "In The Mix",
     href: "/projects/in-the-mix",
     descripcion:
-      "Cuarteto de soul, funk y pop alternativo para la parte de la fiesta. Alta energía y repertorio pensado para llenar la pista de baile.",
+      "Banda en directo para la fiesta: un cuarteto de soul, funk y pop alternativo. Alta energía y repertorio pensado para llenar la pista de baile.",
     encaja: "Fiesta, barra libre, eventos de empresa",
   },
   {
@@ -110,9 +110,9 @@ const faqs = [
       "Depende de lo que necesitéis cubrir: solo la ceremonia, ceremonia y cóctel, o el día entero hasta la fiesta. Se concreta el formato, los momentos y la duración antes de cerrar la fecha, para que no haya sorpresas.",
   },
   {
-    pregunta: "¿Qué formato encaja mejor en una boda?",
+    pregunta: "¿Qué es mejor para una boda: un dúo, un grupo o una banda?",
     respuesta:
-      "Depende del momento. El dúo acústico funciona bien en ceremonia y cóctel, donde la música acompaña la conversación. La banda completa está pensada para la fiesta. En muchas bodas se combinan los dos.",
+      "Depende del momento. El dúo acústico funciona bien en ceremonia y cóctel, donde la música acompaña la conversación. Para la fiesta, lo que encaja es un grupo de música en directo, y ahí entra la banda completa. En muchas bodas se combinan los dos formatos.",
   },
   {
     pregunta: "¿Se puede pedir una canción concreta?",
@@ -166,10 +166,12 @@ export default function BodasYEventosPage() {
 
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3 text-white">
-            Formatos
+            Dúo, grupo o banda para tu boda
           </h2>
           <p className="text-neutral-400 font-light mb-10 max-w-2xl">
-            Tres maneras de sonar, que pueden combinarse dentro de un mismo día.
+            Si buscas un grupo de música para tu boda en Madrid, hay tres
+            formatos, de más íntimo a más festivo. Pueden combinarse dentro de
+            un mismo día.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6">
