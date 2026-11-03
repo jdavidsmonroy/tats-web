@@ -6,9 +6,9 @@ import JsonLd from "@/components/JsonLd";
 import { serviceSchema, faqSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata = pageMetadata({
-  title: "Música para bodas y eventos",
+  title: "Música para bodas en Madrid",
   description:
-    "Música en directo para bodas, ceremonias y eventos de empresa. Con base en Madrid y disponibilidad para desplazarse. Formato acústico a dúo, banda de soul y funk o voz solista.",
+    "Música en directo para bodas en Madrid: dúo acústico para la ceremonia y el cóctel, o banda de soul y funk para la fiesta. Más de diez años en directo. Consulta disponibilidad para tu fecha.",
   path: "/bodas-y-eventos",
   image: "/og/bodas-y-eventos.jpg",
   imageAlt: "Tats cantando con guitarra: música en directo para bodas y eventos",
@@ -59,11 +59,55 @@ const repertorio = [
   { tema: "One Way or Another", autor: "Blondie" },
 ];
 
+// Cada momento de la boda es una busqueda distinta ("musica para ceremonia
+// civil", "cancion para la entrada de la novia"...) y una decision distinta
+// para los novios.
+const momentos = [
+  {
+    titulo: "Ceremonia",
+    texto:
+      "Civil o religiosa. Voz y guitarra para la entrada de la novia, la firma de actas y la salida. Se preparan las canciones concretas que elijáis, incluida alguna que no esté en el repertorio habitual.",
+  },
+  {
+    titulo: "Cóctel",
+    texto:
+      "Música de fondo mientras los invitados hablan y se saludan. Formato acústico, volumen que no obliga a levantar la voz, repertorio de pop-rock y soul en versiones suaves.",
+  },
+  {
+    titulo: "Banquete",
+    texto:
+      "Acompañamiento durante la comida o la cena, con un punto más de presencia que en el cóctel pero sin competir con las conversaciones de las mesas.",
+  },
+  {
+    titulo: "Primer baile y fiesta",
+    texto:
+      "El primer baile se ensaya con la canción que hayáis elegido. A partir de ahí, la banda completa toma el relevo con soul y funk para llenar la pista.",
+  },
+];
+
+// Zonas donde ya se ha tocado. No es una lista cerrada: la base es Madrid y
+// se acude a otras ciudades.
+const zonas = [
+  "Madrid capital",
+  "Sierra de Madrid",
+  "Alcalá de Henares",
+  "Las Rozas y Pozuelo",
+  "Aranjuez y Chinchón",
+  "Segovia",
+  "Toledo",
+  "Guadalajara",
+];
+
 const faqs = [
   {
     pregunta: "¿En qué zonas tocáis?",
     respuesta:
       "La base está en Madrid, pero hay disponibilidad para desplazarse a otras ciudades. Escríbeme indicando dónde es el evento y lo vemos.",
+  },
+  {
+    pregunta: "¿Qué incluye la música en directo para una boda en Madrid?",
+    respuesta:
+      "Depende de lo que necesitéis cubrir: solo la ceremonia, ceremonia y cóctel, o el día entero hasta la fiesta. Se concreta el formato, los momentos y la duración antes de cerrar la fecha, para que no haya sorpresas.",
   },
   {
     pregunta: "¿Qué formato encaja mejor en una boda?",
@@ -102,16 +146,21 @@ export default function BodasYEventosPage() {
       <div className="container mx-auto max-w-5xl">
         <header className="mb-20 max-w-3xl">
           <span className="text-xs uppercase tracking-widest text-neutral-500 font-medium block mb-4">
-            Con base en Madrid
+            Bodas, eventos de empresa y fiestas privadas
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-white">
-            Música en directo para bodas y eventos
+            Música en directo para bodas en Madrid
           </h1>
           <p className="text-xl text-neutral-400 font-light leading-relaxed">
             Más de diez años cantando en directo, en formatos que van del dúo
             acústico a la banda completa. La música se elige según el momento:
             una ceremonia no pide lo mismo que una pista de baile a la una de la
-            madrugada. Con base en Madrid y disponibilidad para desplazarse.
+            madrugada.
+          </p>
+          <p className="text-lg text-neutral-400 font-light leading-relaxed mt-4">
+            Con base en Madrid, y disponibilidad para desplazarme a otras
+            ciudades. Si buscas música para una boda, un evento de empresa o
+            una fiesta privada, escríbeme con la fecha y lo vemos.
           </p>
         </header>
 
@@ -153,6 +202,46 @@ export default function BodasYEventosPage() {
               </div>
             ))}
           </div>
+        </section>
+
+        <section className="mb-20">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3 text-white">
+            Música para cada momento de la boda
+          </h2>
+          <p className="text-neutral-400 font-light mb-10 max-w-2xl">
+            Un día de boda tiene varios momentos y cada uno pide algo distinto.
+            Estos son los que suelo cubrir.
+          </p>
+
+          <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
+            {momentos.map(({ titulo, texto }) => (
+              <div key={titulo}>
+                <h3 className="text-lg font-medium text-white mb-2">{titulo}</h3>
+                <p className="text-neutral-400 font-light leading-relaxed">{texto}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-20">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3 text-white">
+            Zonas donde toco
+          </h2>
+          <p className="text-neutral-400 font-light mb-8 max-w-2xl">
+            La base está en Madrid y es donde trabajo habitualmente, pero me
+            desplazo. Si tu boda es en otra provincia, pregúntame sin problema.
+          </p>
+
+          <ul className="flex flex-wrap gap-3">
+            {zonas.map((zona) => (
+              <li
+                key={zona}
+                className="px-4 py-2 rounded-full bg-neutral-900 border border-white/10 text-sm text-neutral-300 font-light"
+              >
+                {zona}
+              </li>
+            ))}
+          </ul>
         </section>
 
         <section className="mb-20">

@@ -25,6 +25,13 @@ export function personSchema() {
       "@type": "Place",
       name: siteConfig.city,
     },
+    // Dice donde esta, no hasta donde llega: lo segundo es areaServed.
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: siteConfig.city,
+      addressRegion: "Comunidad de Madrid",
+      addressCountry: siteConfig.country,
+    },
     areaServed: {
       "@type": "Country",
       name: "España",
